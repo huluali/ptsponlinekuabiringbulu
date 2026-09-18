@@ -49,6 +49,7 @@ import androidx.compose.material.icons.filled.Receipt
 import androidx.compose.material.icons.filled.RecordVoiceOver
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SmartToy
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Terminal
 import androidx.compose.material.icons.filled.Verified
 import androidx.compose.material.icons.filled.VolunteerActivism
@@ -109,6 +110,7 @@ fun FullMenuGridScreen(
     onNavigateToTracking: (String) -> Unit,
     onNavigateToSmartSyariah: (Int) -> Unit,
     onNavigateToProfile: () -> Unit,
+    onNavigateToIkmSurvey: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     var searchQuery by remember { mutableStateOf("") }
@@ -352,6 +354,14 @@ fun FullMenuGridScreen(
                         iconColor = Color(0xFFB71C1C),
                         iconBgColor = Color(0xFFFFEBEE),
                         action = { onNavigateToServices(null) }
+                    ),
+                    AppMenuItem(
+                        id = "ikm_survey",
+                        title = "Survei IKM\nBerbintang",
+                        icon = Icons.Filled.Star,
+                        iconColor = Color(0xFFD97706),
+                        iconBgColor = Color(0xFFFEF3C7),
+                        action = onNavigateToIkmSurvey
                     )
                 )
             )

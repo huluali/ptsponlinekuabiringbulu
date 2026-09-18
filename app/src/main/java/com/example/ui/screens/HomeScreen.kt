@@ -41,6 +41,7 @@ import androidx.compose.material.icons.filled.PeopleAlt
 import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SmartToy
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Verified
 import androidx.compose.material.icons.filled.Widgets
 import androidx.compose.material3.Button
@@ -97,6 +98,7 @@ fun HomeScreen(
     onNavigateToSmartSyariah: (Int) -> Unit,
     onNavigateToProfile: () -> Unit,
     onNavigateToFullMenu: () -> Unit,
+    onNavigateToIkmSurvey: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     var quickTrackingCode by remember { mutableStateOf("") }
@@ -307,6 +309,89 @@ fun HomeScreen(
                         ) {
                             Text("Lacak", fontWeight = FontWeight.Bold)
                         }
+                    }
+                }
+            }
+        }
+
+        // 3b. Survei IKM Berbintang Banner
+        item {
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                border = BorderStroke(1.dp, Color(0xFFFDE68A)),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+                    .padding(top = 10.dp)
+                    .clickable { onNavigateToIkmSurvey() }
+                    .testTag("card_ikm_survey_banner")
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(
+                            Brush.horizontalGradient(
+                                listOf(Color(0xFFFFFBEB), Color(0xFFFEF2F2))
+                            )
+                        )
+                        .padding(14.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(44.dp)
+                            .clip(CircleShape)
+                            .background(Color(0xFFF59E0B).copy(alpha = 0.20f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Star,
+                            contentDescription = null,
+                            tint = Color(0xFFD97706),
+                            modifier = Modifier.size(24.dp)
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(12.dp))
+                    Column(modifier = Modifier.weight(1f)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = "Survei IKM Berbintang",
+                                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                                color = Color(0xFF8B1515)
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(Color(0xFFDCFCE7))
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text(
+                                    text = "⭐ 4.9 (Mutu A)",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.ExtraBold,
+                                    color = Color(0xFF16A34A)
+                                )
+                            }
+                        }
+                        Text(
+                            text = "Indeks Kepuasan Masyarakat KUA Biringbulu",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Color(0xFF64748B),
+                            fontSize = 11.5.sp
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Button(
+                        onClick = onNavigateToIkmSurvey,
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B1515)),
+                        shape = RoundedCornerShape(10.dp),
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
+                        modifier = Modifier.height(36.dp)
+                    ) {
+                        Text("Isi Survei", fontSize = 11.5.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }

@@ -1,6 +1,6 @@
 {
   "name": "KUA Biringbulu",
-  "description": "Aplikasi Layanan Digital Terpadu KUA Biringbulu - 48 Layanan Lengkap, Pengajuan Online, Cek Status, dan Bimbingan Syariah Cerdas.",
+  "description": "Aplikasi Layanan Digital Terpadu KUA Biringbulu - 48 Layanan Lengkap, Pengajuan Online, Cek Status, Survei IKM Berbintang, dan Bimbingan Syariah Cerdas.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

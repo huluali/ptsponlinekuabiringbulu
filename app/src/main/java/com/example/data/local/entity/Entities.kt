@@ -122,3 +122,23 @@ data class BookmarkEntity(
     val serviceId: Int,
     val bookmarkedAt: Long = System.currentTimeMillis()
 )
+
+@Entity(tableName = "ikm_surveys")
+data class IkmSurveyEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val respondentName: String,
+    val respondentPhone: String = "",
+    val serviceName: String,
+    val village: String,
+    val overallRating: Int, // 1 - 5 Bintang
+    val ratingRequirements: Int, // 1 - 5 Bintang Persyaratan
+    val ratingProcedure: Int, // 1 - 5 Bintang Prosedur/Alur
+    val ratingSpeed: Int, // 1 - 5 Bintang Waktu Pelayanan
+    val ratingCost: Int, // 1 - 5 Bintang Bebas Pungli / Tarif Sesuai
+    val ratingStaff: Int, // 1 - 5 Bintang Keramahan & Integritas Petugas 5S
+    val ratingFacility: Int, // 1 - 5 Bintang Sarpras Ruang Tunggu & Balai Nikah
+    val feedback: String, // Ulasan & Saran Masyarakat
+    val timestamp: Long = System.currentTimeMillis(),
+    val formattedDate: String = ""
+)

@@ -32,6 +32,7 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.QrCode
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.RadioButtonUnchecked
 import androidx.compose.material3.AlertDialog
@@ -43,6 +44,7 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
@@ -84,6 +86,7 @@ fun TrackingScreen(
     allApplications: List<ServiceApplicationEntity>,
     onDeleteApplication: (Long) -> Unit,
     onUpdateStatus: (Long, String, String) -> Unit,
+    onSurveyIkm: ((String) -> Unit)? = null,
     modifier: Modifier = Modifier
 ) {
     var selectedAppForModal by remember { mutableStateOf<ServiceApplicationEntity?>(null) }
@@ -222,7 +225,8 @@ fun TrackingScreen(
                     if (searchedApplication != null) {
                         TrackingDetailCard(
                             application = searchedApplication,
-                            onShowDigitalPass = { selectedAppForModal = searchedApplication }
+                            onShowDigitalPass = { selectedAppForModal = searchedApplication },
+                            onSurveyIkm = onSurveyIkm
                         )
                     } else {
                         Card(
@@ -364,8 +368,24 @@ fun TrackingScreen(
                 }
             },
             confirmButton = {
-                Button(onClick = { selectedAppForModal = null }) {
-                    Text("Tutup")
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    if (app.status == "SELESAI" && onSurveyIkm != null) {
+                        Button(
+                            onClick = {
+                                val title = app.serviceTitle
+                                selectedAppForModal = null
+                                onSurveyIkm(title)
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD97706))
+                        ) {
+                            Icon(imageVector = Icons.Filled.Star, contentDescription = null, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text("Beri IKM ⭐")
+                        }
+                    }
+                    Button(onClick = { selectedAppForModal = null }) {
+                        Text("Tutup")
+                    }
                 }
             }
         )
@@ -383,7 +403,8 @@ fun TrackingScreen(
 @Composable
 fun TrackingDetailCard(
     application: ServiceApplicationEntity,
-    onShowDigitalPass: () -> Unit
+    onShowDigitalPass: () -> Unit,
+    onSurveyIkm: ((String) -> Unit)? = null
 ) {
     Card(
         shape = RoundedCornerShape(16.dp),
@@ -527,6 +548,23 @@ fun TrackingDetailCard(
                 Icon(imageVector = Icons.Filled.QrCode, contentDescription = null, modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(6.dp))
                 Text("Buka Kartu Bukti Pendaftaran Digital", fontSize = 13.sp)
+            }
+
+            if (application.status == "SELESAI" && onSurveyIkm != null) {
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedButton(
+                    onClick = { onSurveyIkm(application.serviceTitle) },
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.outlinedButtonColors(
+                        contentColor = Color(0xFFD97706)
+                    ),
+                    border = BorderStroke(1.dp, Color(0xFFF59E0B)),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = null, tint = Color(0xFFD97706), modifier = Modifier.size(18.dp))
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text("Beri Penilaian Bintang IKM ⭐", fontWeight = FontWeight.Bold, fontSize = 12.5.sp)
+                }
             }
         }
     }

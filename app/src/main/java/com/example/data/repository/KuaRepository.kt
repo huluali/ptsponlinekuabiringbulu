@@ -3,10 +3,12 @@ package com.example.data.repository
 import com.example.data.KuaServiceData
 import com.example.data.local.dao.BookmarkDao
 import com.example.data.local.dao.ConsultationDao
+import com.example.data.local.dao.IkmSurveyDao
 import com.example.data.local.dao.ServiceApplicationDao
 import com.example.data.local.dao.StaffDao
 import com.example.data.local.entity.BookmarkEntity
 import com.example.data.local.entity.ConsultationEntity
+import com.example.data.local.entity.IkmSurveyEntity
 import com.example.data.local.entity.ServiceApplicationEntity
 import com.example.data.local.entity.StaffEntity
 import com.example.model.KuaServiceCategory
@@ -25,11 +27,13 @@ class KuaRepository(
     private val applicationDao: ServiceApplicationDao,
     private val consultationDao: ConsultationDao,
     private val bookmarkDao: BookmarkDao,
-    private val staffDao: StaffDao
+    private val staffDao: StaffDao,
+    private val ikmSurveyDao: IkmSurveyDao
 ) {
     val allApplications: Flow<List<ServiceApplicationEntity>> = applicationDao.getAllApplications()
     val allConsultations: Flow<List<ConsultationEntity>> = consultationDao.getAllConsultations()
     val bookmarkedIds: Flow<List<Int>> = bookmarkDao.getAllBookmarkedServiceIds()
+    val allIkmSurveys: Flow<List<IkmSurveyEntity>> = ikmSurveyDao.getAllSurveys()
 
     // Persistent Room Staffing State
     val staffList: Flow<List<KuaStaff>> = staffDao.getAllStaff().map { list ->
@@ -151,6 +155,136 @@ class KuaRepository(
             val entities = KuaStaffData.initialStaffList.map { StaffEntity.fromModel(it) }
             staffDao.insertAllStaff(entities)
         }
+        val surveyCount = ikmSurveyDao.getSurveyCount()
+        if (surveyCount == 0) {
+            seedInitialIkmSurveys()
+        }
+    }
+
+    suspend fun submitIkmSurvey(
+        respondentName: String,
+        respondentPhone: String = "",
+        serviceName: String,
+        village: String,
+        overallRating: Int,
+        ratingRequirements: Int,
+        ratingProcedure: Int,
+        ratingSpeed: Int,
+        ratingCost: Int,
+        ratingStaff: Int,
+        ratingFacility: Int,
+        feedback: String
+    ): Long {
+        val dateFormat = SimpleDateFormat("dd MMMM yyyy, HH:mm", Locale("id", "ID"))
+        val entity = IkmSurveyEntity(
+            respondentName = if (respondentName.isBlank()) "Warga Biringbulu (Anonim)" else respondentName.trim(),
+            respondentPhone = respondentPhone.trim(),
+            serviceName = serviceName,
+            village = village,
+            overallRating = overallRating.coerceIn(1, 5),
+            ratingRequirements = ratingRequirements.coerceIn(1, 5),
+            ratingProcedure = ratingProcedure.coerceIn(1, 5),
+            ratingSpeed = ratingSpeed.coerceIn(1, 5),
+            ratingCost = ratingCost.coerceIn(1, 5),
+            ratingStaff = ratingStaff.coerceIn(1, 5),
+            ratingFacility = ratingFacility.coerceIn(1, 5),
+            feedback = feedback.trim(),
+            timestamp = System.currentTimeMillis(),
+            formattedDate = dateFormat.format(Date())
+        )
+        return ikmSurveyDao.insertSurvey(entity)
+    }
+
+    suspend fun deleteIkmSurvey(id: Long) {
+        ikmSurveyDao.deleteSurveyById(id)
+    }
+
+    private suspend fun seedInitialIkmSurveys() {
+        val s1 = IkmSurveyEntity(
+            respondentName = "H. Baso Dg. Sitaba",
+            respondentPhone = "0812-4112-xxxx",
+            serviceName = "Pendaftaran Nikah (SIMKAH)",
+            village = "Tonrorita",
+            overallRating = 5,
+            ratingRequirements = 5,
+            ratingProcedure = 5,
+            ratingSpeed = 5,
+            ratingCost = 5,
+            ratingStaff = 5,
+            ratingFacility = 5,
+            feedback = "Pelayanan nikah di Balai KUA sangat memuaskan, benar-benar Rp 0,- tanpa biaya tambahan sepeser pun. Penghulu dan staf sangat ramah dan sopan.",
+            timestamp = System.currentTimeMillis() - 86400000L * 2,
+            formattedDate = "16 September 2026, 10:15"
+        )
+        val s2 = IkmSurveyEntity(
+            respondentName = "Nurhaeni, S.Pd.",
+            respondentPhone = "0852-9844-xxxx",
+            serviceName = "Surat Rekomendasi Nikah (N10)",
+            village = "Kelurahan Lauwa",
+            overallRating = 5,
+            ratingRequirements = 5,
+            ratingProcedure = 5,
+            ratingSpeed = 5,
+            ratingCost = 5,
+            ratingStaff = 5,
+            ratingFacility = 4,
+            feedback = "Proses rekomendasi nikah luar daerah sangat cepat, berkas diverifikasi secara digital dan langsung selesai dalam 15 menit. Luar biasa PTSP KUA Biringbulu!",
+            timestamp = System.currentTimeMillis() - 86400000L * 4,
+            formattedDate = "14 September 2026, 11:30"
+        )
+        val s3 = IkmSurveyEntity(
+            respondentName = "Dg. Mangngassai",
+            respondentPhone = "0813-5520-xxxx",
+            serviceName = "Akta Ikrar Wakaf (AIW)",
+            village = "Baturappe",
+            overallRating = 5,
+            ratingRequirements = 5,
+            ratingProcedure = 5,
+            ratingSpeed = 4,
+            ratingCost = 5,
+            ratingStaff = 5,
+            ratingFacility = 5,
+            feedback = "Pengurusan akta wakaf tanah masjid dibimbing dengan sangat sabar oleh PPAIW KUA. Tidak ada pungutan liar, semuanya transparan dan jelas.",
+            timestamp = System.currentTimeMillis() - 86400000L * 7,
+            formattedDate = "11 September 2026, 09:45"
+        )
+        val s4 = IkmSurveyEntity(
+            respondentName = "Rahmat Hidayat (Catin)",
+            respondentPhone = "0821-8733-xxxx",
+            serviceName = "Bimbingan Perkawinan (Bimwin Catin)",
+            village = "Pencong",
+            overallRating = 5,
+            ratingRequirements = 5,
+            ratingProcedure = 5,
+            ratingSpeed = 5,
+            ratingCost = 5,
+            ratingStaff = 5,
+            ratingFacility = 5,
+            feedback = "Materi bimbingan perkawinan sangat bermanfaat bagi bekal rumah tangga kami. Fasilitator dan narasumber menyampaikan materi dengan interaktif dan menyenangkan.",
+            timestamp = System.currentTimeMillis() - 86400000L * 9,
+            formattedDate = "09 September 2026, 14:00"
+        )
+        val s5 = IkmSurveyEntity(
+            respondentName = "Ust. Syarifuddin",
+            respondentPhone = "0813-4299-xxxx",
+            serviceName = "Penerbitan ID SIMAS Masjid",
+            village = "Berutallasa",
+            overallRating = 5,
+            ratingRequirements = 5,
+            ratingProcedure = 4,
+            ratingSpeed = 5,
+            ratingCost = 5,
+            ratingStaff = 5,
+            ratingFacility = 4,
+            feedback = "Sertifikat ID SIMAS Nasional langsung terbit dan data masjid langsung sinkron ke Kemenag Pusat. Pelayanan sangat responsif dan amanah.",
+            timestamp = System.currentTimeMillis() - 86400000L * 12,
+            formattedDate = "06 September 2026, 10:20"
+        )
+        ikmSurveyDao.insertSurvey(s1)
+        ikmSurveyDao.insertSurvey(s2)
+        ikmSurveyDao.insertSurvey(s3)
+        ikmSurveyDao.insertSurvey(s4)
+        ikmSurveyDao.insertSurvey(s5)
     }
 
     private suspend fun seedInitialApplications() {

@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.data.local.entity.BookmarkEntity
 import com.example.data.local.entity.ConsultationEntity
+import com.example.data.local.entity.IkmSurveyEntity
 import com.example.data.local.entity.ServiceApplicationEntity
 import com.example.data.local.entity.StaffEntity
 import kotlinx.coroutines.flow.Flow
@@ -87,4 +88,19 @@ interface StaffDao {
 
     @Query("DELETE FROM kua_staff WHERE id = :id")
     suspend fun deleteStaffById(id: String)
+}
+
+@Dao
+interface IkmSurveyDao {
+    @Query("SELECT * FROM ikm_surveys ORDER BY timestamp DESC")
+    fun getAllSurveys(): Flow<List<IkmSurveyEntity>>
+
+    @Query("SELECT COUNT(*) FROM ikm_surveys")
+    suspend fun getSurveyCount(): Int
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertSurvey(survey: IkmSurveyEntity): Long
+
+    @Query("DELETE FROM ikm_surveys WHERE id = :id")
+    suspend fun deleteSurveyById(id: Long)
 }

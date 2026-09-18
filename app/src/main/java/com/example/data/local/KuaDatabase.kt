@@ -6,10 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.data.local.dao.BookmarkDao
 import com.example.data.local.dao.ConsultationDao
+import com.example.data.local.dao.IkmSurveyDao
 import com.example.data.local.dao.ServiceApplicationDao
 import com.example.data.local.dao.StaffDao
 import com.example.data.local.entity.BookmarkEntity
 import com.example.data.local.entity.ConsultationEntity
+import com.example.data.local.entity.IkmSurveyEntity
 import com.example.data.local.entity.ServiceApplicationEntity
 import com.example.data.local.entity.StaffEntity
 
@@ -18,9 +20,10 @@ import com.example.data.local.entity.StaffEntity
         ServiceApplicationEntity::class,
         ConsultationEntity::class,
         BookmarkEntity::class,
-        StaffEntity::class
+        StaffEntity::class,
+        IkmSurveyEntity::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class KuaDatabase : RoomDatabase() {
@@ -28,6 +31,7 @@ abstract class KuaDatabase : RoomDatabase() {
     abstract fun consultationDao(): ConsultationDao
     abstract fun bookmarkDao(): BookmarkDao
     abstract fun staffDao(): StaffDao
+    abstract fun ikmSurveyDao(): IkmSurveyDao
 
     companion object {
         @Volatile

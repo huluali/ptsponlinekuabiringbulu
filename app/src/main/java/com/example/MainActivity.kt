@@ -54,6 +54,7 @@ import com.example.ui.components.KuaHeaderBadge
 import com.example.ui.screens.ApplicationFormScreen
 import com.example.ui.screens.FullMenuGridScreen
 import com.example.ui.screens.HomeScreen
+import com.example.ui.screens.IkmSurveyScreen
 import com.example.ui.screens.ProfileOfficeScreen
 import com.example.ui.screens.ServiceDetailScreen
 import com.example.ui.screens.ServicesListScreen
@@ -84,6 +85,7 @@ sealed class ScreenDestination {
     object FullMenu : ScreenDestination()
     data class ServiceDetail(val serviceId: Int) : ScreenDestination()
     data class ApplicationForm(val serviceId: Int) : ScreenDestination()
+    data class IkmSurvey(val prefilledServiceTitle: String? = null) : ScreenDestination()
 }
 
 @Composable
@@ -102,6 +104,7 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
     val checkedReqMap by viewModel.checkedRequirementsMap.collectAsState()
     val staffList by viewModel.staffList.collectAsState()
     val customLogoUri by viewModel.customLogoUri.collectAsState()
+    val allIkmSurveys by viewModel.allIkmSurveys.collectAsState()
 
     // Smart Syariah States
     val deviceAzimuth by viewModel.deviceAzimuth.collectAsState()
@@ -121,6 +124,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                 currentDestination = ScreenDestination.MainTabs
             }
             currentDestination is ScreenDestination.FullMenu -> {
+                currentDestination = ScreenDestination.MainTabs
+            }
+            currentDestination is ScreenDestination.IkmSurvey -> {
                 currentDestination = ScreenDestination.MainTabs
             }
             selectedTab != 0 -> {
@@ -217,6 +223,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                                 },
                                 onNavigateToFullMenu = {
                                     currentDestination = ScreenDestination.FullMenu
+                                },
+                                onNavigateToIkmSurvey = {
+                                    currentDestination = ScreenDestination.IkmSurvey()
                                 }
                             )
                             1 -> ServicesListScreen(
@@ -241,6 +250,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                                 onDeleteApplication = { viewModel.deleteApplication(it) },
                                 onUpdateStatus = { id, newStatus, notes ->
                                     viewModel.updateApplicationStatus(id, newStatus, notes)
+                                },
+                                onSurveyIkm = { serviceTitle ->
+                                    currentDestination = ScreenDestination.IkmSurvey(prefilledServiceTitle = serviceTitle)
                                 }
                             )
                             3 -> SmartSyariahScreen(
@@ -266,7 +278,10 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                                     viewModel.updateApplicationStatus(id, newStatus, notes)
                                 },
                                 customLogoUri = customLogoUri,
-                                onUpdateCustomLogoUri = { viewModel.updateCustomLogoUri(it) }
+                                onUpdateCustomLogoUri = { viewModel.updateCustomLogoUri(it) },
+                                onNavigateToIkmSurvey = {
+                                    currentDestination = ScreenDestination.IkmSurvey()
+                                }
                             )
                         }
                     }
@@ -298,6 +313,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                             onNavigateToProfile = {
                                 viewModel.setTab(4)
                                 currentDestination = ScreenDestination.MainTabs
+                            },
+                            onNavigateToIkmSurvey = {
+                                currentDestination = ScreenDestination.IkmSurvey()
                             }
                         )
                     }
@@ -316,6 +334,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                                 checkedRequirements = checkedReqMap[service.id] ?: emptySet(),
                                 onToggleRequirement = { idx ->
                                     viewModel.toggleRequirementCheck(service.id, idx)
+                                },
+                                onGiveFeedbackIkm = { serviceTitle ->
+                                    currentDestination = ScreenDestination.IkmSurvey(prefilledServiceTitle = serviceTitle)
                                 }
                             )
                         } else {
@@ -349,6 +370,31 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                         } else {
                             currentDestination = ScreenDestination.MainTabs
                         }
+                    }
+
+                    is ScreenDestination.IkmSurvey -> {
+                        IkmSurveyScreen(
+                            surveys = allIkmSurveys,
+                            initialServiceTitle = destination.prefilledServiceTitle,
+                            onSubmitSurvey = { name, phone, serviceName, village, overall, req, proc, speed, cost, staff, fac, feedback, onSuccess ->
+                                viewModel.submitIkmSurvey(
+                                    respondentName = name,
+                                    respondentPhone = phone,
+                                    serviceName = serviceName,
+                                    village = village,
+                                    overallRating = overall,
+                                    ratingRequirements = req,
+                                    ratingProcedure = proc,
+                                    ratingSpeed = speed,
+                                    ratingCost = cost,
+                                    ratingStaff = staff,
+                                    ratingFacility = fac,
+                                    feedback = feedback,
+                                    onSuccess = onSuccess
+                                )
+                            },
+                            onBack = { currentDestination = ScreenDestination.MainTabs }
+                        )
                     }
                 }
             }

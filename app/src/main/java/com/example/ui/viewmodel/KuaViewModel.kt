@@ -12,6 +12,7 @@ import com.example.data.BiringbuluData
 import com.example.data.KuaServiceData
 import com.example.data.local.KuaDatabase
 import com.example.data.local.entity.ConsultationEntity
+import com.example.data.local.entity.IkmSurveyEntity
 import com.example.data.local.entity.ServiceApplicationEntity
 import com.example.data.repository.KuaRepository
 import com.example.model.KuaServiceCategory
@@ -66,7 +67,8 @@ class KuaViewModel(application: Application) : AndroidViewModel(application), Se
             db.serviceApplicationDao(),
             db.consultationDao(),
             db.bookmarkDao(),
-            db.staffDao()
+            db.staffDao(),
+            db.ikmSurveyDao()
         )
 
         staffList = repository.staffList
@@ -77,6 +79,9 @@ class KuaViewModel(application: Application) : AndroidViewModel(application), Se
             repository.seedInitialDataIfEmpty()
         }
     }
+
+    val allIkmSurveys: StateFlow<List<IkmSurveyEntity>> = repository.allIkmSurveys
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     val allApplications: StateFlow<List<ServiceApplicationEntity>> = repository.allApplications
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
@@ -258,6 +263,46 @@ class KuaViewModel(application: Application) : AndroidViewModel(application), Se
     fun deleteConsultation(id: Long) {
         viewModelScope.launch {
             repository.deleteConsultation(id)
+        }
+    }
+
+    fun submitIkmSurvey(
+        respondentName: String,
+        respondentPhone: String,
+        serviceName: String,
+        village: String,
+        overallRating: Int,
+        ratingRequirements: Int,
+        ratingProcedure: Int,
+        ratingSpeed: Int,
+        ratingCost: Int,
+        ratingStaff: Int,
+        ratingFacility: Int,
+        feedback: String,
+        onSuccess: () -> Unit
+    ) {
+        viewModelScope.launch {
+            repository.submitIkmSurvey(
+                respondentName = respondentName,
+                respondentPhone = respondentPhone,
+                serviceName = serviceName,
+                village = village,
+                overallRating = overallRating,
+                ratingRequirements = ratingRequirements,
+                ratingProcedure = ratingProcedure,
+                ratingSpeed = ratingSpeed,
+                ratingCost = ratingCost,
+                ratingStaff = ratingStaff,
+                ratingFacility = ratingFacility,
+                feedback = feedback
+            )
+            onSuccess()
+        }
+    }
+
+    fun deleteIkmSurvey(id: Long) {
+        viewModelScope.launch {
+            repository.deleteIkmSurvey(id)
         }
     }
 
