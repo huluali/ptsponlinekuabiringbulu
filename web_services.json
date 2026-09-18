@@ -1,0 +1,1042 @@
+[
+  {
+    "requirements": [
+      "Surat Pengantar Nikah dari Desa/Kelurahan (Model N1)",
+      "Surat Persetujuan Calon Mempelai (Model N4)",
+      "Surat Izin Orang Tua bagi yang belum berusia 21 tahun (Model N5)",
+      "Fotokopi KTP, KK, dan Akta Kelahiran/Ijazah Calon Pengantin",
+      "Fotokopi KTP Orang Tua / Wali Nikah dan 2 orang Saksi Nikah",
+      "Surat Rekomendasi Nikah dari KUA asal (jika akad di luar kecamatan domisili)",
+      "Pasfoto berwarna latar biru ukuran 2x3 (4 lembar) dan 4x6 (2 lembar) berpeci/berkerudung",
+      "Surat Keterangan Sehat & Bebas Anemia dari Puskesmas / Elsimil"
+    ],
+    "procedures": [
+      "Pemohon mengurus surat pengantar N1-N4 di kantor Desa/Kelurahan setempat di Biringbulu",
+      "Mendaftarkan berkas ke PTSP KUA Biringbulu atau via aplikasi SIMKAH Kemenag minimal 10 hari kerja sebelum akad",
+      "Petugas PTSP memverifikasi kelengkapan berkas fisik dan data digital",
+      "Penetapan jadwal pemeriksaan nikah dan bimbingan pranikah"
+    ],
+    "id": 1,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pendaftaran Kehendak Nikah",
+    "subtitle": "Pendaftaran awal rencana akad nikah secara online SIMKAH atau langsung di Balai Nikah KUA",
+    "legalBasis": "PMA No. 20 Tahun 2019 tentang Pencatatan Pernikahan",
+    "processingTime": "Minimal 10 hari kerja sebelum akad",
+    "cost": "Gratis di Balai Nikah (Jam Kerja) / Rp 600.000 (Luar Balai Nikah/Hari Libur via Kas Negara)",
+    "outputDocument": "Tanda Terima Pendaftaran & Bukti Billing Simkah",
+    "targetAudience": "Calon Pengantin Pria & Wanita"
+  },
+  {
+    "requirements": [
+      "Kehadiran Calon Pengantin Pria dan Wanita",
+      "Kehadiran Wali Nikah (Nasab atau Hakim)",
+      "Membawa KTP asli seluruh pihak yang diperiksa",
+      "Dokumen asli N1, N4, N5, dan ijazah/akta lahir untuk pencocokan nama orang tua"
+    ],
+    "procedures": [
+      "Penghulu memeriksa kesesuaian identitas fisik dengan dokumen administrasi",
+      "Penghulu meneliti status wali nikah, nasab, serta memastikan tidak adanya halangan syar'i",
+      "Penandatanganan Berita Acara Pemeriksaan Nikah (N7) oleh Catin, Wali, dan Penghulu"
+    ],
+    "id": 2,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pemeriksaan Nikah",
+    "subtitle": "Verifikasi keabsahan data catin, wali nikah, dan pemeriksaan rukun serta syarat syar'i",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 10 & Kompilasi Hukum Islam (KHI)",
+    "processingTime": "1 Hari Kerja (Saat pemeriksaan fisik)",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Berita Acara Pemeriksaan Nikah (Model N7)",
+    "targetAudience": "Calon Pengantin Pria, Wanita, dan Wali Nikah"
+  },
+  {
+    "requirements": [
+      "Surat permohonan berwakil wali dari wali nasab sah",
+      "Fotokopi KTP dan KK Wali Nasab serta penerima wakil (Taukildan)",
+      "Surat Keterangan alasan ketidakhadiran (kesehatan, domisili luar daerah, tugas)",
+      "Dua orang saksi ikrar berwakil wali beserta KTP"
+    ],
+    "procedures": [
+      "Wali nasab menghadap Kepala KUA/Penghulu didampingi 2 orang saksi",
+      "Wali mengikrarkan taukil wali secara lisan dan tertulis",
+      "Penghulu menerbitkan surat pengesahan ikrar taukil wali"
+    ],
+    "id": 3,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Surat Keterangan Ikrar Berwakil Wali",
+    "subtitle": "Penerbitan surat keterangan pelimpahan hak taukil wali nikah kepada orang lain atau Penghulu KUA",
+    "legalBasis": "PMA No. 20 Tahun 2019 & Fatwa MUI tentang Taukil Wali",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Ikrar Taukil / Berwakil Wali",
+    "targetAudience": "Wali Nikah yang berhalangan hadir pada saat akad"
+  },
+  {
+    "requirements": [
+      "Tanda bukti pendaftaran kehendak nikah",
+      "Berkas pendaftaran yang telah diverifikasi oleh petugas verifikator KUA"
+    ],
+    "procedures": [
+      "KUA memeriksa data dan menemukan kekurangan dokumen atau larangan perkawinan",
+      "KUA menerbitkan surat pemberitahuan Model N8/N9 dengan mencantumkan alasan rinci",
+      "Pemohon dapat melengkapi kekurangan atau mengajukan banding ke Pengadilan Agama jika terjadi penolakan"
+    ],
+    "id": 4,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pemberitahuan Kekurangan Syarat / Penolakan",
+    "subtitle": "Penerbitan surat resmi mengenai berkas nikah yang belum lengkap atau adanya halangan hukum",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 15 & UU No. 1 Tahun 1974",
+    "processingTime": "1 Hari Kerja setelah verifikasi",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Model N8 (Kekurangan Syarat) / Model N9 (Penolakan Nikah)",
+    "targetAudience": "Calon Pengantin yang berkasnya tertunda/tertahan"
+  },
+  {
+    "requirements": [
+      "Berkas pemeriksaan nikah (N7) yang telah dinyatakan lengkap dan memenuhi syarat"
+    ],
+    "procedures": [
+      "KUA menyusun daftar pengumuman rencana pernikahan calon mempelai",
+      "Pemasangan pengumuman di papan KUA Biringbulu dan portal SIMKAH",
+      "Menerima sanggahan masyarakat bila terdapat halangan hukum perkawinan"
+    ],
+    "id": 5,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pengumuman Nikah",
+    "subtitle": "Publikasi pengumuman kehendak nikah pada papan pengumuman resmi KUA atau digital",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 14",
+    "processingTime": "Ditempel selama 10 hari kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Pengumuman Nikah (Model N10)",
+    "targetAudience": "Masyarakat Umum & Pihak Terkait"
+  },
+  {
+    "requirements": [
+      "Kehadiran Catin Pria dan Wanita yang telah lolos uji berkas",
+      "Kehadiran Wali Nikah yang sah",
+      "Kehadiran minimal 2 (dua) orang saksi nikah laki-laki muslim dewasa",
+      "Kuitansi/Bukti setor PNBP Rp 600.000 jika akad di luar kantor KUA Biringbulu"
+    ],
+    "procedures": [
+      "Penghulu memverifikasi ulang kehadiran mempelai, wali, saksi, dan mahar (mas kawin)",
+      "Khotbah nikah, istighfar, syahadat, dan pemanduan akad ijab qabul",
+      "Penandatanganan Buku Akta Nikah oleh Suami, Istri, Wali, Saksi, dan Penghulu",
+      "Penyerahan Buku Nikah dan pembacaan sighat taklik talak (opsional)"
+    ],
+    "id": 6,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pelaksanaan dan Pencatatan Nikah",
+    "subtitle": "Pengawasan akad, pemanduan ijab kabul, dan pencatatan resmi dalam register Akta Nikah",
+    "legalBasis": "UU No. 1 Tahun 1974 jo UU No. 16 Tahun 2019 & PMA No. 20/2019",
+    "processingTime": "Hari H Pelaksanaan Akad",
+    "cost": "Gratis di Balai Nikah (Jam Kerja) / Rp 600.000,- (Luar Kantor/Hari Libur via Kas Negara)",
+    "outputDocument": "Akta Nikah (Model N) dan Register Pencatatan Nikah",
+    "targetAudience": "Kedua Mempelai, Wali, dan Saksi Nikah"
+  },
+  {
+    "requirements": [
+      "Telah menyelesaikan seluruh prosesi akad nikah dan penandatanganan akta nikah",
+      "Pengisian tanda terima penyerahan dokumen"
+    ],
+    "procedures": [
+      "Penghulu menyerahkan langsung Buku Nikah kepada mempelai pria dan wanita",
+      "Mempelai menerima link unduhan Kartu Nikah Digital SIMKAH dengan QR Code terverifikasi",
+      "Pengambilan dokumentasi resmi penyerahan dokumen di Balai Nikah"
+    ],
+    "id": 7,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Penyerahan Buku Nikah",
+    "subtitle": "Penyerahan fisik sepasang Buku Nikah resmi (Suami & Istri) beserta Kartu Nikah Digital",
+    "legalBasis": "PMA No. 20 Tahun 2019 & Kepdirjen Bimas Islam",
+    "processingTime": "Seketika setelah akad atau maksimal 1 hari kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Buku Nikah Asli (Hijau & Cokelat) + Akses Kartu Nikah Digital QR Code",
+    "targetAudience": "Pasangan Suami Istri Baru"
+  },
+  {
+    "requirements": [
+      "Register Akta Nikah dan data transaksi SIMKAH KUA Biringbulu",
+      "Rekapitulasi setoran PNBP Nikah ke Kas Negara"
+    ],
+    "procedures": [
+      "Operator KUA mengompilasi seluruh pencatatan nikah bulanan",
+      "Sinkronisasi data online ke Sistem Informasi Administrasi Kependudukan (SIAK) Dukcapil",
+      "Penerbitan laporan resmi Kepala KUA Biringbulu ke Kemenag Gowa"
+    ],
+    "id": 8,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pelaporan Nikah",
+    "subtitle": "Pelaporan periodik data peristiwa nikah dan rujuk ke Kemenag Kabupaten Gowa dan Dukcapil",
+    "legalBasis": "PMA No. 20 Tahun 2019 & PKS Kemenag-Dukcapil",
+    "processingTime": "Bulanan / Berkala",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Laporan Bulanan NR (Nikah Rujuk) & Update Status Kependudukan",
+    "targetAudience": "Kemenag Kab. Gowa, Disdukcapil, Instansi Pembina"
+  },
+  {
+    "requirements": [
+      "Surat Pengantar Nikah (N1-N4) dari Desa setempat di Biringbulu",
+      "Fotokopi KTP dan Kartu Keluarga Pemohon",
+      "Fotokopi Akta Kelahiran atau Ijazah terakhir",
+      "Pasfoto berwarna 2x3 dan 3x4 latar biru (masing-masing 2 lembar)",
+      "Surat Keterangan KUA Tujuan (Nama KUA dan Kabupaten/Kota lokasi akad)"
+    ],
+    "procedures": [
+      "Pemohon mengajukan berkas rekomendasi ke PTSP KUA Biringbulu",
+      "Petugas memeriksa data kependudukan dan status belum pernah tercatat nikah di Biringbulu",
+      "Penerbitan dan legalisasi Surat Rekomendasi Nikah oleh Kepala KUA"
+    ],
+    "id": 9,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Surat Rekomendasi Nikah (Numpang Nikah)",
+    "subtitle": "Penerbitan surat rekomendasi bagi warga Biringbulu yang akan melangsungkan akad di luar kecamatan",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 9",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Nikah Resmi KUA Biringbulu",
+    "targetAudience": "Warga domisili Biringbulu yang menikah di luar wilayah"
+  },
+  {
+    "requirements": [
+      "Buku Nikah Asli Suami dan Istri",
+      "Fotokopi KTP, KK, dan Akta Kelahiran/Ijazah yang memuat data yang benar",
+      "Surat Keterangan Beda Nama / Data dari Kepala Desa di Biringbulu (bila diperlukan)",
+      "Surat Permohonan Perbaikan Data ditujukan kepada Kepala KUA"
+    ],
+    "procedures": [
+      "Pemohon mengajukan berkas dan buku nikah asli ke KUA Biringbulu",
+      "Pemeriksaan silang dengan Buku Register Akta Nikah fisik di arsip KUA",
+      "Pemberian catatan resmi perbaikan pada halaman perubahan atau cetak ulang buku nikah"
+    ],
+    "id": 10,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Perbaikan Data Nikah (Salah Tulis)",
+    "subtitle": "Perbaikan kesalahan penulisan nama, tanggal lahir, atau NIK pada Buku Nikah sesuai dokumen kependudukan",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 37",
+    "processingTime": "1 - 2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Catatan Perubahan pada Buku Nikah Asli / Buku Nikah Baru",
+    "targetAudience": "Pemegang Buku Nikah yang memiliki kesalahan ketik redaksional"
+  },
+  {
+    "requirements": [
+      "Salinan Putusan / Penetapan Pengadilan yang telah berkekuatan hukum tetap (inkracht)",
+      "Buku Nikah Asli Suami dan Istri",
+      "Fotokopi KTP dan KK terbaru",
+      "Surat Permohonan Pencatatan Perubahan Data"
+    ],
+    "procedures": [
+      "Penyerahan salinan putusan pengadilan asli dan buku nikah ke KUA",
+      "Petugas mencocokkan isi amar putusan dengan nomor registrasi akta nikah",
+      "Kepala KUA membuat Catatan Pinggir pada Register Akta Nikah dan Buku Nikah"
+    ],
+    "id": 11,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Perubahan Data Nikah (Penetapan Pengadilan)",
+    "subtitle": "Pencatatan perubahan data identitas perkawinan berdasarkan Putusan/Penetapan Pengadilan Agama/Negeri",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 38 & UU Adminduk",
+    "processingTime": "2 - 3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Catatan Pinggir Akta Nikah & Buku Nikah Terkoreksi",
+    "targetAudience": "Warga yang memiliki Salinan Penetapan Pengadilan tentang data nikah"
+  },
+  {
+    "requirements": [
+      "Surat Tanda Lapor Kehilangan dari Kepolisian (Polsek Biringbulu/Polres Gowa) - jika hilang",
+      "Buku Nikah yang rusak fisik (jika karena rusak)",
+      "Fotokopi KTP dan Kartu Keluarga Suami & Istri",
+      "Pasfoto berwarna latar biru 2x3 (2 lembar)",
+      "Surat Pernyataan bermeterai Rp 10.000 tentang kebenaran kehilangan/kerusakan"
+    ],
+    "procedures": [
+      "Pemohon mengajukan berkas ke PTSP KUA Biringbulu",
+      "Petugas melacak nomor seri dan register akta nikah di buku register KUA",
+      "Pencetakan dan penerbitan Duplikat Buku Nikah resmi KUA Biringbulu"
+    ],
+    "id": 12,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Penggantian Buku Nikah (Hilang / Rusak)",
+    "subtitle": "Penerbitan Duplikat Buku Nikah (Kutipan Akta Nikah Pengganti) karena rusak berat atau hilang",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 39",
+    "processingTime": "1 - 3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Duplikat Buku Nikah Resmi (Cap Duplikat)",
+    "targetAudience": "Warga yang kehilangan atau buku nikahnya rusak"
+  },
+  {
+    "requirements": [
+      "Membawa Buku Nikah Asli Suami atau Istri",
+      "Fotokopi Buku Nikah (halaman identitas & akad) maksimal 5 rangkap",
+      "KTP Asli Pemohon / Kuasa"
+    ],
+    "procedures": [
+      "Pemohon memperlihatkan Buku Nikah asli kepada petugas PTSP",
+      "Petugas memvalidasi keaslian blangko dan kecocokan data dengan arsip digital KUA",
+      "Pembubuhan cap legalisir dan tanda tangan pejabat KUA Biringbulu"
+    ],
+    "id": 13,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Legalisasi Buku Nikah",
+    "subtitle": "Pengesahan salinan fotokopi Buku Nikah / Duplikat untuk keperluan administrasi resmi, haji, paspor, perbankan",
+    "legalBasis": "PMA No. 20 Tahun 2019 & Kepdirjen Bimas Islam No. DJ.II/1/2013",
+    "processingTime": "Langsung Selesai (15 - 30 Menit)",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Fotokopi Buku Nikah Berstempel & Tanda Tangan Basah / Digital Legalisir",
+    "targetAudience": "Masyarakat yang membutuhkan legalisir akta perkawinan"
+  },
+  {
+    "requirements": [
+      "Surat Pengantar Keterangan Belum Pernah Menikah dari Kepala Desa di Biringbulu",
+      "Surat Pernyataan Belum Pernah Menikah bermeterai Rp 10.000",
+      "Fotokopi KTP dan Kartu Keluarga Pemohon",
+      "Pasfoto berwarna 3x4 latar biru (2 lembar)"
+    ],
+    "procedures": [
+      "Pemohon mengajukan berkas ke loket PTSP KUA Biringbulu",
+      "Petugas memeriksa buku register nikah untuk memastikan ketiadaan riwayat pernikahan",
+      "Penandatanganan Surat Keterangan oleh Kepala KUA Biringbulu"
+    ],
+    "id": 14,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Surat Keterangan Status Belum Menikah",
+    "subtitle": "Penerbitan surat keterangan resmi bahwa yang bersangkutan belum pernah tercatat menikah di KUA Biringbulu",
+    "legalBasis": "KMA Standar Pelayanan Publik Kemenag",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Keterangan Belum Menikah Resmi KUA",
+    "targetAudience": "Warga yang membutuhkan untuk syarat beasiswa, dinas, lamaran kerja, kedutaan"
+  },
+  {
+    "requirements": [
+      "Marriage Certificate / Sertifikat Nikah dari negara setempat",
+      "Surat Keterangan / Laporan Perkawinan dari KBRI / KJRI negara setempat",
+      "Terjemahan resmi sertifikat nikah oleh penerjemah tersumpah (sworn translator)",
+      "Fotokopi Paspor, KTP, dan KK Suami & Istri",
+      "Fotokopi Akta Kelahiran kedua mempelai"
+    ],
+    "procedures": [
+      "Pemohon menyerahkan dokumen luar negeri asli beserta legalisasi KBRI ke KUA",
+      "KUA memverifikasi keabsahan dokumen syar'i dan diplomatik",
+      "Pencatatan dalam register khusus perkawinan luar negeri dan penerbitan tanda bukti"
+    ],
+    "id": 15,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pendaftaran Bukti Nikah Luar Negeri",
+    "subtitle": "Pelaporan dan pencatatan perkawinan WNI yang telah melangsungkan pernikahan sah di luar negeri",
+    "legalBasis": "UU No. 23/2006 jo UU No. 24/2013 & PMA No. 20/2019",
+    "processingTime": "3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Tanda Bukti Pendaftaran Perkawinan Luar Negeri",
+    "targetAudience": "WNI yang menikah di luar negeri dan berdomisili di Biringbulu"
+  },
+  {
+    "requirements": [
+      "Salinan Penetapan Isbat Nikah Asli dari Pengadilan Agama (Pengadilan Agama Sungguminasa)",
+      "Surat Keterangan Kematian (jika isbat nikah untuk salah satu pihak yang telah wafat)",
+      "Fotokopi KTP dan KK Suami & Istri",
+      "Pasfoto berwarna latar biru 2x3 (4 lembar) dan 4x6 (2 lembar)",
+      "Surat Pengantar dari Kepala Desa setempat di Biringbulu"
+    ],
+    "procedures": [
+      "Pemohon menyerahkan salinan penetapan isbat nikah ke loket KUA",
+      "KUA memeriksa nomor register penetapan dan amar putusan",
+      "Penerbitan Buku Nikah resmi dengan mencantumkan tanggal akad sesuai amar isbat"
+    ],
+    "id": 16,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pencatatan Isbat Nikah",
+    "subtitle": "Pencatatan dan penerbitan Buku Nikah bagi pasangan yang pernikahannya telah disahkan Pengadilan Agama",
+    "legalBasis": "PMA No. 20 Tahun 2019 Pasal 36 & Sema Mahkamah Agung",
+    "processingTime": "2 - 3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Buku Nikah Resmi Berdasarkan Penetapan Isbat Nikah",
+    "targetAudience": "Pasangan yang memiliki Salinan Penetapan Isbat Nikah dari Pengadilan Agama"
+  },
+  {
+    "requirements": [
+      "Akta Notaris Asli Perjanjian Perkawinan yang dibuat oleh Notaris berwenang",
+      "Fotokopi KTP dan KK kedua belah pihak",
+      "Buku Nikah Asli (jika dibuat setelah perkawinan berlangsung)"
+    ],
+    "procedures": [
+      "Pemohon menyerahkan akta notaris kepada Pegawai Pencatat Nikah (PPN)",
+      "Petugas mencatat nomor dan tanggal akta notaris pada Akta Nikah dan Buku Nikah",
+      "Pemberian tanda pengesahan pencatatan perjanjian"
+    ],
+    "id": 17,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pencatatan Perjanjian Nikah (Pre-nuptial Agreement)",
+    "subtitle": "Pencatatan akta notaris perjanjian perkawinan (pemisahan harta, dll.) sebelum atau saat pernikahan",
+    "legalBasis": "UU No. 1/1974 jo Putusan MK No. 69/PUU-XIII/2015 & PMA No. 20/2019",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Catatan Perjanjian Perkawinan pada Akta & Buku Nikah",
+    "targetAudience": "Calon Pengantin atau Pasangan Suami Istri"
+  },
+  {
+    "requirements": [
+      "Akta Notaris Perubahan / Pembatalan Perjanjian Perkawinan",
+      "Buku Nikah Asli Suami dan Istri",
+      "Fotokopi KTP dan KK kedua pihak"
+    ],
+    "procedures": [
+      "Penyerahan berkas ke KUA Biringbulu",
+      "PPN memeriksa kesesuaian akta notaris perubahan dengan pencatatan terdahulu",
+      "Pembubuhan catatan pinggir pada Akta Nikah dan Buku Nikah"
+    ],
+    "id": 18,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pencatatan Pembatalan / Perubahan Perjanjian Nikah",
+    "subtitle": "Pencatatan resmi perubahan atau pembatalan isi perjanjian perkawinan berdasarkan akta notaris baru",
+    "legalBasis": "PMA No. 20 Tahun 2019 & KUHPerdata / KHI",
+    "processingTime": "1 - 2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Catatan Pinggir Perubahan Perjanjian pada Register Akta Nikah",
+    "targetAudience": "Suami Istri yang mengubah kesepakatan perjanjian perkawinan"
+  },
+  {
+    "requirements": [
+      "Akta Cerai Asli dari Pengadilan Agama (talak satu atau talak dua raj'i)",
+      "Surat Keterangan masih dalam masa iddah dari Desa/Kelurahan",
+      "Persetujuan tertulis dari pihak Istri untuk kembali rujuk",
+      "Kehadiran Suami, Istri, dan 2 (dua) orang saksi muslim",
+      "Fotokopi KTP dan KK masing-masing pihak"
+    ],
+    "procedures": [
+      "Suami dan Istri bersama saksi menghadap Penghulu di KUA Biringbulu",
+      "Penghulu memeriksa masa iddah dan kesukarelaan kedua belah pihak",
+      "Pengucapan ikrar rujuk di hadapan Penghulu dan saksi",
+      "Penandatanganan Akta Rujuk dan penyerahan Kutipan Akta Rujuk"
+    ],
+    "id": 19,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pencatatan Rujuk",
+    "subtitle": "Pencatatan kembalinya ikatan perkawinan suami-istri yang masih dalam masa iddah talak raj'i",
+    "legalBasis": "UU No. 1/1974, Kompilasi Hukum Islam Pasal 163-169 & PMA No. 20/2019",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Buku Pendaftaran Rujuk & Kutipan Akta Rujuk (Model R)",
+    "targetAudience": "Pasangan Suami Istri yang hendak rujuk dalam masa iddah"
+  },
+  {
+    "requirements": [
+      "Salinan Putusan Pembatalan Perkawinan yang berkekuatan hukum tetap dari Pengadilan Agama",
+      "Buku Nikah Asli Suami dan Istri yang akan ditarik oleh KUA",
+      "Fotokopi KTP dan KK Pemohon"
+    ],
+    "procedures": [
+      "Penyerahan salinan putusan pembatalan nikah ke KUA Biringbulu",
+      "KUA mencoret nomor register akta nikah bersangkutan dengan garis merah dan catatan pembatalan",
+      "Penarikan fisik Buku Nikah dari peredaran untuk dimusnahkan/diarsipkan"
+    ],
+    "id": 20,
+    "category": "PELAYANAN_PERNIKAHAN",
+    "title": "Pengajuan Pembatalan Nikah",
+    "subtitle": "Penerimaan laporan dan pengadministrasian putusan pembatalan perkawinan dari Pengadilan Agama",
+    "legalBasis": "UU No. 1/1974 Pasal 22-28 & Kompilasi Hukum Islam Pasal 70-76",
+    "processingTime": "1 - 2 Hari Kerja setelah putusan inkracht",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Keterangan Pencabutan / Pembatalan Akta Nikah dalam Register",
+    "targetAudience": "Pihak yang pernikahannya dibatalkan oleh Pengadilan Agama"
+  },
+  {
+    "requirements": [
+      "Telah terdaftar sebagai calon pengantin di KUA Biringbulu",
+      "Pasfoto berwarna 3x4 latar biru (1 lembar)",
+      "Komitmen menghadiri seluruh sesi materi (Keluarga Sakinah, Psikologi, Kesehatan Reproduksi, Keuangan)"
+    ],
+    "procedures": [
+      "Catin menerima undangan jadwal kelas Bimwin dari KUA Biringbulu",
+      "Mengikuti pelatihan interaktif bersama Fasilitator Kemenag, Puskesmas, dan PLKB",
+      "Evaluasi pemahaman dan penyerahan Sertifikat Bimwin resmi"
+    ],
+    "id": 21,
+    "category": "BIMBINGAN_PERKAWINAN",
+    "title": "Bimbingan Perkawinan Pra-Nikah (Bimwin Catin)",
+    "subtitle": "Kursus pembekalan calon pengantin menuju keluarga sakinah, mawaddah, warahmah & cegah stunting",
+    "legalBasis": "Kepdirjen Bimas Islam No. 172 Tahun 2022 tentang Petunjuk Teknis Bimbingan Perkawinan Catin",
+    "processingTime": "2 Hari Pelatihan (Tatap Muka / Terjadwal)",
+    "cost": "Rp 0,- (Gratis Dibiayai APBN)",
+    "outputDocument": "Sertifikat Bimbingan Perkawinan (Sertifikat Bimwin)",
+    "targetAudience": "Seluruh Calon Pengantin yang telah terdaftar di KUA Biringbulu"
+  },
+  {
+    "requirements": [
+      "Fotokopi Buku Nikah atau Kartu Nikah Digital",
+      "Fotokopi KTP dan KK domisili Kecamatan Biringbulu",
+      "Mendaftarkan diri secara individu atau melalui kelompok Majelis Taklim"
+    ],
+    "procedures": [
+      "Pendaftaran peserta bimbingan keluarga di KUA atau kelompok binaan desa",
+      "Pelaksanaan workshop tematik: Resolusi Konflik Rumah Tangga & Finansial Islami",
+      "Sesi tanya jawab privat dengan Konselor Keluarga KUA"
+    ],
+    "id": 22,
+    "category": "BIMBINGAN_PERKAWINAN",
+    "title": "Bimbingan Keluarga Sakinah",
+    "subtitle": "Program penguatan ketahanan keluarga, edukasi parenting islami, dan pembinaan pasca nikah",
+    "legalBasis": "Kepdirjen Bimas Islam No. 491 Tahun 2020 tentang Fasilitasi Gerakan Keluarga Sakinah",
+    "processingTime": "Sesuai Jadwal Program / Berkala",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Materi Edukasi & Rekomendasi Ketahanan Keluarga",
+    "targetAudience": "Pasangan Suami Istri usia perkawinan muda (1-5 tahun) di Biringbulu"
+  },
+  {
+    "requirements": [
+      "Fotokopi Buku Nikah / Kartu Keluarga",
+      "Fotokopi KTP Suami dan Istri",
+      "Surat Permohonan Konseling / Mediasi dari salah satu atau kedua belah pihak"
+    ],
+    "procedures": [
+      "Penerimaan pengaduan dan penjadwalan sesi mediasi di Ruang Konseling KUA Biringbulu",
+      "Penghulu/Konselor mendengarkan penjelasan dari masing-masing pihak secara terpisah & bersama",
+      "Pemberian nasihat syar'i, pencarian solusi, dan pembuatan komitmen kesepakatan damai"
+    ],
+    "id": 23,
+    "category": "BIMBINGAN_PERKAWINAN",
+    "title": "Bimbingan Konseling dan Mediasi Keluarga (Masa Nikah)",
+    "subtitle": "Layanan konseling privat, mediasi sengketa rumah tangga, dan upaya rekonsiliasi pencegahan perceraian (BP4)",
+    "legalBasis": "KMA No. 379 Tahun 1993 tentang BP4 & Kompilasi Hukum Islam Pasal 143",
+    "processingTime": "1 - 3 Sesi Konseling",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Berita Acara Hasil Konseling / Mediasi Rumah Tangga",
+    "targetAudience": "Suami Istri yang sedang mengalami perselisihan rumah tangga"
+  },
+  {
+    "requirements": [
+      "Data rincian harta/hasil pertanian untuk perhitungan zakat",
+      "Data objek tanah/aset yang direncanakan untuk diwakafkan"
+    ],
+    "procedures": [
+      "Konsultasi tatap muka atau online dengan Pengelola Zawa KUA Biringbulu",
+      "Penghitungan nisab, haul, dan kadar zakat sesuai syariat fiqih",
+      "Rekomendasi penyaluran ke BAZNAS Kab. Gowa atau UPZ resmi"
+    ],
+    "id": 24,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "Bimbingan Zakat dan Wakaf",
+    "subtitle": "Konsultasi perhitungan nisab zakat mal/profesi/pertanian dan tata kelola tanah wakaf produktif",
+    "legalBasis": "UU No. 23 Tahun 2011 tentang Zakat & UU No. 41 Tahun 2004 tentang Wakaf",
+    "processingTime": "Langsung / 1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Lembar Simulasi Zakat / Panduan Pengelolaan Wakaf",
+    "targetAudience": "Muzakki, Mustahiq, Wakif, Nazhir di Kecamatan Biringbulu"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Pendaftaran Ikrar Wakaf",
+      "Sertifikat Hak Milik (SHM) / Surat Girik / Rincik / SPPT PBB Tanah Asli",
+      "Surat Keterangan Riwayat Tanah dan Tidak Sengketa dari Kepala Desa",
+      "Fotokopi KTP Wakif, Nazhir (Ketua, Sekretaris, Bendahara, Anggota), dan 2 Saksi",
+      "Surat Pengesahan Susunan Nazhir dari KUA Biringbulu",
+      "Surat Persetujuan Ahli Waris Wakif (jika wakif telah wafat untuk APAIW)"
+    ],
+    "procedures": [
+      "PPAIW meneliti keabsahan bukti kepemilikan tanah dan status nazhir",
+      "Pelaksanaan pengucapan ikrar wakaf di hadapan Kepala KUA selaku PPAIW dan 2 saksi",
+      "Penandatanganan Buku Akta Ikrar Wakaf (AIW/APAIW)",
+      "Penyerahan salinan AIW kepada Wakif, Nazhir, BWI, dan BPN"
+    ],
+    "id": 25,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "Pembuatan AIW atau APAIW",
+    "subtitle": "Penerbitan Akta Ikrar Wakaf (AIW) atau Akta Pengganti AIW (APAIW) oleh Kepala KUA selaku PPAIW",
+    "legalBasis": "UU No. 41 Tahun 2004 Pasal 32-39 & PMA No. 73 Tahun 2013",
+    "processingTime": "3 - 7 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Blangko Resmi Akta Ikrar Wakaf (AIW) / APAIW",
+    "targetAudience": "Wakif, Nazhir, dan Ahli Waris"
+  },
+  {
+    "requirements": [
+      "Salinan Akta Ikrar Wakaf (AIW) atau APAIW yang telah diterbitkan PPAIW",
+      "Surat Ukur / Sketsa Lokasi Tanah dari Desa",
+      "Fotokopi KTP dan SK Pengesahan Nazhir"
+    ],
+    "procedures": [
+      "Nazhir mendaftarkan berkas AIW ke operator SIWAK KUA Biringbulu",
+      "Input data spasial, luas, peruntukan, dan batas tanah ke database Kemenag RI",
+      "Penerbitan surat rekomendasi pendaftaran hak atas tanah wakaf ke BPN Gowa"
+    ],
+    "id": 26,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "Pendaftaran Tanah Wakaf",
+    "subtitle": "Pencatatan tanah wakaf ke dalam Sistem Informasi Wakaf (SIWAK) Kemenag dan pendampingan sertifikasi BPN",
+    "legalBasis": "PMA No. 73 Tahun 2013 & MoU Kemenag - ATR/BPN",
+    "processingTime": "3 - 5 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Nomor Register SIWAK & Surat Pengantar Sertifikasi Wakaf BPN",
+    "targetAudience": "Nazhir Tanah Wakaf Masjid, Musala, Makam, Madrasah"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Izin Tukar Menukar dari Nazhir",
+      "Alasan mendesak (kepentingan umum / pembangunan fasilitas publik)",
+      "Data tanah pengganti yang nilainya sekurang-kurangnya setara atau lebih tinggi",
+      "Berita Acara Musyawarah warga, tokoh agama, dan aparat desa setempat"
+    ],
+    "procedures": [
+      "Tim KUA Biringbulu melakukan verifikasi berkas dan tinjauan lokasi tanah wakaf & calon pengganti",
+      "Penyusunan Berita Acara Kajian Teknis Lapangan",
+      "Penyampaian rekomendasi Kepala KUA ke Kantor Kemenag Gowa dan BWI (Badan Wakaf Indonesia)"
+    ],
+    "id": 27,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "Mutasi Harta Benda Wakaf (Tukar Guling / Ruislag)",
+    "subtitle": "Rekomendasi teknis alih fungsi / penukaran harta benda wakaf untuk kepentingan umum",
+    "legalBasis": "UU No. 41 Tahun 2004 Pasal 40-41 & PP No. 42 Tahun 2006",
+    "processingTime": "14 Hari Kerja (Proses Kajian Lapangan)",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Hasil Tinjauan Lapangan Mutasi Wakaf",
+    "targetAudience": "Nazhir Wakaf dan Pihak Pemohon Ruislag (Instansi/Pemerintah)"
+  },
+  {
+    "requirements": [
+      "Surat Tanda Lapor Kehilangan dari Polsek Biringbulu (jika hilang)",
+      "Warkah AIW fisik yang rusak (jika rusak)",
+      "Surat Pengantar dari Kepala Desa setempat",
+      "Fotokopi KTP Ketua Nazhir yang masih aktif"
+    ],
+    "procedures": [
+      "PPAIW KUA Biringbulu membuka Buku Register Induk Arsip Perwakafan",
+      "Pencocokan data batas tanah, wakif, dan peruntukan warkah",
+      "Penerbitan Salinan Pengganti Akta Ikrar Wakaf bertanda tangan Kepala KUA"
+    ],
+    "id": 28,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "AIW / APAIW Hilang atau Rusak",
+    "subtitle": "Penerbitan Salinan Resmi Akta Ikrar Wakaf sebagai pengganti warkah yang hilang atau rusak",
+    "legalBasis": "PMA No. 73 Tahun 2013 tentang Tata Cara Perwakafan",
+    "processingTime": "2 - 3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Salinan Resmi AIW / APAIW Berlegalisir",
+    "targetAudience": "Nazhir yang kehilangan warkah akta ikrar wakaf"
+  },
+  {
+    "requirements": [
+      "Surat Kematian nazhir lama (jika meninggal) atau surat pengunduran diri",
+      "Berita Acara Rapat Pembentukan Pengurus Nazhir Baru tingkat desa/jamaah",
+      "Daftar susunan calon nazhir baru (minimal 3 orang: Ketua, Sekretaris, Bendahara)",
+      "Fotokopi KTP dan KK seluruh calon nazhir baru"
+    ],
+    "procedures": [
+      "Penyerahan berkas musyawarah jamaah ke KUA Biringbulu",
+      "KUA memeriksa syarat administratif dan integritas syar'i calon nazhir",
+      "Penerbitan Surat Rekomendasi Penetapan Nazhir Baru"
+    ],
+    "id": 29,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "Rekomendasi Penggantian Nazhir",
+    "subtitle": "Penerbitan surat rekomendasi penggantian nazhir perorangan/organisasi yang meninggal, berhenti, atau tidak aktif",
+    "legalBasis": "UU No. 41 Tahun 2004 Pasal 45 & PMA No. 73/2013",
+    "processingTime": "2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Penggantian Nazhir ke BWI",
+    "targetAudience": "Badan Wakaf Indonesia (BWI), Pengurus Masjid, dan Ahli Waris Nazhir"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Pengesahan Nazhir",
+      "Daftar Susunan Pengurus Nazhir (Ketua, Sekretaris, Bendahara, Anggota)",
+      "Surat Pernyataan Kesediaan menjadi Nazhir bermeterai",
+      "Fotokopi KTP seluruh pengurus",
+      "Fotokopi AIW / APAIW atau surat keterangan tanah wakaf"
+    ],
+    "procedures": [
+      "PPAIW meneliti kelayakan calon nazhir (Amanah, Baligh, Beragama Islam, Mampu Mengelola)",
+      "Pembuatan draft SK Pengesahan Nazhir Wakaf",
+      "Penandatanganan dan penyerahan SK resmi kepada pengurus nazhir"
+    ],
+    "id": 30,
+    "category": "ZAKAT_DAN_WAKAF",
+    "title": "Penerbitan Surat Pengesahan Nazhir & Penggantian Nazhir",
+    "subtitle": "Penerbitan Surat Keputusan (SK) Pengesahan Nazhir Wakaf resmi dari KPAIW KUA Biringbulu",
+    "legalBasis": "PMA No. 73 Tahun 2013 & Peraturan BWI No. 1 Tahun 2020",
+    "processingTime": "2 - 3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Keputusan (SK) Pengesahan Nazhir KUA Biringbulu",
+    "targetAudience": "Pengurus Nazhir Tanah Wakaf se-Kecamatan Biringbulu"
+  },
+  {
+    "requirements": [
+      "Formulir Profil Masjid/Musala (Nama, Tipologi, Luas Bangunan/Tanah, Tahun Berdiri, Status Tanah)",
+      "Susunan Pengurus Takmir Masjid yang disahkan Kepala Desa",
+      "Foto fisik bangunan masjid (Tampak Depan, Dalam, Mihrab, dan Plang Nama)",
+      "Titik Koordinat Geografis (Latitude & Longitude) lokasi masjid",
+      "Fotokopi Surat Tanah / AIW Wakaf"
+    ],
+    "procedures": [
+      "Takmir menyerahkan formulir profil dan foto masjid ke KUA",
+      "Operator SIMAS KUA Biringbulu memverifikasi berkas dan titik koordinat",
+      "Generate ID SIMAS 16 Digit dan pencetakan Surat Keterangan Terdaftar Nasional"
+    ],
+    "id": 31,
+    "category": "KEMASJIDAN",
+    "title": "Penerbitan ID Masjid / Musala (SIMAS)",
+    "subtitle": "Pendaftaran dan penerbitan Nomor Identitas Nasional Masjid/Musala pada Sistem Informasi Masjid (SIMAS)",
+    "legalBasis": "Kepdirjen Bimas Islam No. DJ.II/802 Tahun 2014 tentang Standar Pembinaan Kemasjidan",
+    "processingTime": "2 - 3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Tanda Terdaftar & Piagam Nomor Identitas Nasional SIMAS",
+    "targetAudience": "Pengurus Takmir Masjid dan Musala se-Kecamatan Biringbulu"
+  },
+  {
+    "requirements": [
+      "Nomor ID SIMAS yang telah terbit",
+      "SK Pengurus Takmir yang masih berlaku",
+      "Surat Permohonan dari Ketua Takmir Masjid"
+    ],
+    "procedures": [
+      "Takmir mengajukan permohonan ke KUA",
+      "Verifikasi keaktifan data SIMAS oleh staf kemasjidan",
+      "Penerbitan dan penandatanganan SKT oleh Kepala KUA Biringbulu"
+    ],
+    "id": 32,
+    "category": "KEMASJIDAN",
+    "title": "Surat Keterangan Terdaftar (SKT) Masjid/Musala",
+    "subtitle": "Penerbitan surat keterangan legalitas terdaftar untuk keperluan pembukaan rekening bank takmir & proposal",
+    "legalBasis": "Kepdirjen Bimas Islam tentang Pengelolaan Data Rumah Ibadah",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Keterangan Terdaftar (SKT) KUA Biringbulu",
+    "targetAudience": "Pengurus Takmir Masjid / Musala"
+  },
+  {
+    "requirements": [
+      "Proposal Permohonan Bantuan lengkap dengan Rencana Anggaran Biaya (RAB)",
+      "Surat Keterangan Terdaftar SIMAS",
+      "SK Panitia Pembangunan / Pengurus Takmir",
+      "Foto kondisi fisik bangunan yang memerlukan renovasi",
+      "Fotokopi Buku Rekening Bank atas nama Masjid"
+    ],
+    "procedures": [
+      "Panitia menyerahkan proposal pembangunan ke KUA Biringbulu",
+      "Staf kemasjidan meninjau kelayakan administratif dan fakta kebutuhan lapangan",
+      "Penerbitan Surat Rekomendasi Resmi ditujukan ke Kemenag Gowa / Kanwil Kemenag Sulsel"
+    ],
+    "id": 33,
+    "category": "KEMASJIDAN",
+    "title": "Rekomendasi Bantuan Masjid / Musala",
+    "subtitle": "Penerbitan rekomendasi resmi KUA untuk pengajuan bantuan rehabilitasi atau operasional dari Kemenag / Pemda",
+    "legalBasis": "Petunjuk Teknis Bantuan Pembangunan/Rehabilitasi Rumah Ibadah Kemenag RI",
+    "processingTime": "2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Bantuan Rumah Ibadah KUA Biringbulu",
+    "targetAudience": "Panitia Pembangunan / Takmir Masjid se-Biringbulu"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan dari Pengurus Musala",
+      "Daftar minimal 90 orang calon jamaah shalat Jumat ber-KTP setempat",
+      "Surat persetujuan dari minimal 60 orang warga masyarakat sekitar",
+      "Rekomendasi tertulis dari Kepala Desa setempat di Biringbulu",
+      "Hasil musyawarah tidak menimbulkan friksi dengan masjid jami terdekat"
+    ],
+    "procedures": [
+      "Penyampaian berkas permohonan dan musyawarah jamaah",
+      "Tim KUA Biringbulu melakukan verifikasi jarak dan tinjauan kelayakan shalat Jumat",
+      "Penerbitan Surat Rekomendasi Peningkatan Status Musala Menjadi Masjid"
+    ],
+    "id": 34,
+    "category": "KEMASJIDAN",
+    "title": "Rekomendasi Perubahan Status Musala Menjadi Masjid",
+    "subtitle": "Verifikasi persyaratan teknis dan penerbitan rekomendasi peningkatan fungsi musala menjadi masjid jami",
+    "legalBasis": "Peraturan Bersama Menteri Agama & Mendagri No. 9 & 8 Tahun 2006",
+    "processingTime": "5 Hari Kerja (Termasuk Tinjauan Lapangan)",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Peningkatan Status Rumah Ibadah",
+    "targetAudience": "Pengurus Musala dan Jamaah Lingkungan Setempat"
+  },
+  {
+    "requirements": [
+      "Nomor ID SIMAS lama",
+      "Berita Acara Perubahan Data (nama baru / penambahan luas / pergantian imam)",
+      "Dokumen pendukung (Sertifikat tanah baru / Foto renovasi terbaru)"
+    ],
+    "procedures": [
+      "Takmir menyerahkan formulir pembaruan data",
+      "Operator SIMAS melakukan sinkronisasi pembaruan ke server pusat Bimas Islam",
+      "Penerbitan lembar profil SIMAS termutakhir"
+    ],
+    "id": 35,
+    "category": "KEMASJIDAN",
+    "title": "Perubahan Data Masjid / Musala",
+    "subtitle": "Pembaruan informasi luas tanah, nama masjid, tipologi, atau titik koordinat pada database SIMAS",
+    "legalBasis": "Kepdirjen Bimas Islam tentang SIMAS Nasional",
+    "processingTime": "1 - 2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Bukti Update Profil SIMAS Terkini",
+    "targetAudience": "Takmir Masjid/Musala yang mengalami perubahan data"
+  },
+  {
+    "requirements": [
+      "Berita Acara Rapat Formatur Pemilihan Pengurus Masjid Besar Biringbulu",
+      "Daftar Nama Susunan Penasehat, Pengurus Harian, dan Seksi-seksi",
+      "Fotokopi KTP seluruh pengurus inti"
+    ],
+    "procedures": [
+      "Panitia musyawarah menyerahkan berkas susunan pengurus",
+      "Kepala KUA melakukan koordinasi bersama unsur Forkopimcam Biringbulu",
+      "Penerbitan Rekomendasi pengesahan SK oleh Camat Biringbulu"
+    ],
+    "id": 36,
+    "category": "KEMASJIDAN",
+    "title": "Rekomendasi Penetapan Kepengurusan Takmir Masjid Besar",
+    "subtitle": "Fasilitasi dan rekomendasi susunan pengurus Takmir Masjid Besar tingkat Kecamatan Biringbulu",
+    "legalBasis": "Kepdirjen Bimas Islam No. DJ.II/802 Tahun 2014",
+    "processingTime": "3 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Pengesahan Pengurus Takmir Masjid Besar",
+    "targetAudience": "Pengurus Masjid Besar Kecamatan Biringbulu & Camat Biringbulu"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Data resmi dari kampus / lembaga / instansi",
+      "Identitas Pemohon (KTP / Kartu Mahasiswa)",
+      "Mengisi formulir peruntukan pemanfaatan data riset"
+    ],
+    "procedures": [
+      "Pemohon mengajukan surat permohonan ke loket PTSP KUA",
+      "Petugas data menyusun tabel statistik data yang diminta (Masjid, Wakaf, Nikah, Majelis Taklim)",
+      "Penyerahan lembar data resmi bertanda tangan pejabat KUA"
+    ],
+    "id": 37,
+    "category": "DATA_KEAGAMAAN",
+    "title": "Penyediaan Data Keagamaan dan Sarana Keagamaan",
+    "subtitle": "Pelayanan data statistik rumah ibadah, lembaga keagamaan, ormas Islam, dan tokoh agama se-Biringbulu",
+    "legalBasis": "UU No. 14 Tahun 2008 tentang Keterbukaan Informasi Publik (KIP) & PMA SOP KUA",
+    "processingTime": "1 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Buku / Lembar Data Statistik Keagamaan Kecamatan Biringbulu",
+    "targetAudience": "Mahasiswa/Peneliti, Instansi Pemerintah, Ormas, Masyarakat Umum"
+  },
+  {
+    "requirements": [
+      "Proposal Bantuan Lembaga",
+      "SK Izin Operasional / Tanda Terdaftar Kemenag",
+      "Daftar Santri / Jamaah dan Struktur Ustadz/Pengurus",
+      "Fotokopi KTP Pimpinan Lembaga"
+    ],
+    "procedures": [
+      "Penyerahan berkas ke staf Penerangan Agama Islam KUA",
+      "Verifikasi faktual aktivitas pembelajaran keagamaan di desa",
+      "Penerbitan Surat Rekomendasi Kepala KUA Biringbulu"
+    ],
+    "id": 38,
+    "category": "DATA_KEAGAMAAN",
+    "title": "Penerbitan Surat Rekomendasi Bantuan Keagamaan",
+    "subtitle": "Penerbitan rekomendasi bagi ormas Islam, pondok pesantren, TPQ/TPA, dan lembaga dakwah",
+    "legalBasis": "PMA No. 67 Tahun 2015 tentang Bantuan Pemerintah pada Kemenag",
+    "processingTime": "2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi Lembaga Keagamaan",
+    "targetAudience": "Pengelola TPQ, LPPTKA, Madrasah Diniyah, Majelis Taklim Biringbulu"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Rekomendasi Pendirian",
+      "Susunan Pengurus Majelis Taklim (Ketua, Sekretaris, Bendahara, Ustadz/Guru)",
+      "Daftar minimal 15 orang jamaah aktif beserta fotokopi KTP",
+      "Alamat domisili sekretariat dan tempat pengajian berkala",
+      "Surat Keterangan Domisili dari Kepala Desa"
+    ],
+    "procedures": [
+      "Pengurus mengajukan berkas formulir Majelis Taklim ke Penyuluh Agama Islam KUA",
+      "Penyuluh meneliti susunan kurikulum kajian dan struktur kepengurusan",
+      "Penerbitan Surat Rekomendasi untuk penerbitan SKT Kemenag Kabupaten"
+    ],
+    "id": 39,
+    "category": "DATA_KEAGAMAAN",
+    "title": "Penerbitan Surat Rekomendasi Pendirian Majelis Taklim",
+    "subtitle": "Pencatatan dan penerbitan rekomendasi legalitas pendaftaran Majelis Taklim ke Kemenag Kab. Gowa",
+    "legalBasis": "PMA No. 29 Tahun 2019 tentang Majelis Taklim",
+    "processingTime": "2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Rekomendasi & Lembar Tanda Daftar Majelis Taklim",
+    "targetAudience": "Pengurus Majelis Taklim Ibu-ibu / Bapak-bapak di desa"
+  },
+  {
+    "requirements": [
+      "Surat dinas resmi bertanda tangan dan berstempel instansi pemohon",
+      "Menyerahkan minimal 1 rangkap naskah dinas untuk arsip KUA"
+    ],
+    "procedures": [
+      "Penerimaan surat di loket persuratan PTSP",
+      "Pencatatan dalam Buku Agenda Surat Masuk / Sistem Digital",
+      "Disposisi Kepala KUA Biringbulu dan penerusan tindak lanjut ke petugas terkait"
+    ],
+    "id": 40,
+    "category": "KETATAUSAHAAN",
+    "title": "Pelayanan Persuratan Kedinasan",
+    "subtitle": "Penerimaan surat masuk, disposisi, pengiriman surat keluar dinas, dan administrasi umum",
+    "legalBasis": "PMA No. 34 Tahun 2016 tentang Tata Persuratan Dinas Kementerian Agama",
+    "processingTime": "Langsung / Hari yang sama",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Tanda Terima Surat / Nomor Agenda Surat Keluar KUA",
+    "targetAudience": "Instansi Pemerintah, Desa, Ormas, dan Masyarakat"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Penelusuran Arsip",
+      "Menyebutkan perkiraan tahun peristiwa nikah dan nama kedua belah pihak serta orang tua",
+      "Fotokopi KTP Pemohon (ahli waris / pihak bersangkutan)"
+    ],
+    "procedures": [
+      "Arsiparis KUA melakukan penelusuran pada brankas arsip register kuno",
+      "Pencocokan data warkah fisik dengan lembar buku akta nikah",
+      "Penerbitan surat keterangan kepemilikan arsip resmi"
+    ],
+    "id": 41,
+    "category": "KETATAUSAHAAN",
+    "title": "Pelayanan Kearsipan KUA",
+    "subtitle": "Pencarian kembali warkah lama, buku register nikah kuno, dan arsip dokumen bersejarah keagamaan",
+    "legalBasis": "UU No. 43 Tahun 2009 tentang Kearsipan & PMA Tata Kelola Kearsipan",
+    "processingTime": "1 - 2 Hari Kerja",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Surat Keterangan Hasil Pelacakan Arsip / Salinan Warkah",
+    "targetAudience": "Masyarakat yang membutuhkan data arsip peristiwa nikah masa lampau"
+  },
+  {
+    "requirements": [
+      "Laporan / Informasi awal indikasi ketegangan keagamaan atau aliran menyimpang",
+      "Identitas pelapor dijamin kerahasiaannya"
+    ],
+    "procedures": [
+      "Penerimaan laporan deteksi dini oleh Tim Penyuluh / Penghulu KUA",
+      "Koordinasi cepat dengan Polsek Biringbulu, Koramil, Camat, dan MUI Kecamatan",
+      "Pendekatan dialog persuasif dan pembinaan moderasi beragama kepada kelompok terkait"
+    ],
+    "id": 42,
+    "category": "FUNGSI_TAMBAHAN",
+    "title": "Deteksi dan Cegah Dini Konflik Sosial Berdimensi Keagamaan",
+    "subtitle": "Monitoring, pelaporan potensi kerawanan, dan mediasi kerukunan umat beragama bersama Forkopimcam",
+    "legalBasis": "PMA No. 34 Tahun 2016 tentang Organisasi dan Tata Kerja KUA & Program Moderasi Beragama Kemenag",
+    "processingTime": "Respons Cepat 1x24 Jam",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Laporan Early Warning System (EWS) & Berita Acara Rekonsiliasi Damai",
+    "targetAudience": "Tokoh Agama, Tokoh Masyarakat, Forum Kerukunan Umat se-Biringbulu"
+  },
+  {
+    "requirements": [
+      "Memiliki NIB (Nomor Induk Berusaha) berbasis risiko",
+      "Produk tidak berisiko tinggi (makanan/minuman olahan dari bahan halal murni)",
+      "Memiliki KTP dan Nomor WhatsApp aktif",
+      "Foto produk, proses produksi, dan daftar bahan yang digunakan"
+    ],
+    "procedures": [
+      "Pelaku usaha menghubungi Pendamping Proses Produk Halal (P3H) di KUA Biringbulu",
+      "P3H melakukan verifikasi bahan dan proses pembuatan di lokasi usaha",
+      "Penginputan data ke aplikasi SIHALAL BPJPH",
+      "Sidang Komite Fatwa MUI dan penerbitan Sertifikat Halal Digital"
+    ],
+    "id": 43,
+    "category": "FUNGSI_TAMBAHAN",
+    "title": "Jaminan Produk Halal (Pendampingan PPH)",
+    "subtitle": "Pendampingan sertifikasi halal gratis (Sehati / Self Declare) bagi pelaku Usaha Mikro & Kecil (UMK) makanan/minuman",
+    "legalBasis": "UU No. 33 Tahun 2014 tentang Jaminan Produk Halal jo UU Cipta Kerja & BPJPH Kemenag",
+    "processingTime": "Pendampingan s.d. Terbit Sertifikat Halal BPJPH",
+    "cost": "Rp 0,- (Gratis Program Sehati BPJPH)",
+    "outputDocument": "Sertifikat Halal Resmi BPJPH RI & Label Halal Indonesia",
+    "targetAudience": "Pelaku Usaha Mikro & Kecil (UMK) di Kecamatan Biringbulu"
+  },
+  {
+    "requirements": [
+      "Daftar silsilah ahli waris (Suami/Istri, Anak Laki/Perempuan, Orang Tua, Saudara) - untuk waris",
+      "Rincian harta peninggalan bersih setelah dipotong hutang/wasiat/biaya jenazah",
+      "Surat Kematian pewaris"
+    ],
+    "procedures": [
+      "Pemohon menyampaikan pokok masalah konsultasi kepada Penghulu/Penyuluh Syariah",
+      "Kajian dalil Al-Quran, Hadits, dan Kompilasi Hukum Islam",
+      "Penyusunan tabel hisab mawaris (ashabah, dzawil furudh) dan solusi musyawarah islah"
+    ],
+    "id": 44,
+    "category": "KONSULTASI_SYARIAH",
+    "title": "Konsultasi Hukum Islam (Ibadah, Waris Mawaris, Hukum Keluarga)",
+    "subtitle": "Layanan konsultasi fatwa fikih, pembagian harta warisan syariah (Faraid), ibadah praktis, dan muamalah",
+    "legalBasis": "Kompilasi Hukum Islam di Indonesia (Inpres No. 1/1991) & Fatwa Dewan Syariah Nasional MUI",
+    "processingTime": "Langsung saat konsultasi",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Lembar Fatwa Nasihat / Skema Pembagian Waris Faraid",
+    "targetAudience": "Masyarakat Umum, Keluarga Muslim, dan Calon Ahli Waris"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Pengukuran Arah Kiblat dari Pengurus Takmir / Tokoh Masyarakat",
+      "Lokasi tanah / bangunan masjid yang siap untuk ditarik garis shaf",
+      "Kehadiran saksi takmir dan tokoh masyarakat pada saat pengukuran"
+    ],
+    "procedures": [
+      "Penetapan jadwal pengukuran falakiyah oleh Tim Hisab Rukyat KUA Biringbulu",
+      "Pengukuran azimut kiblat (Kordinat Biringbulu: ~292.5° dari Utara Sejati)",
+      "Penandaan garis shaf permanen di lantai/tanah",
+      "Penerbitan Berita Acara Kalibrasi Arah Kiblat bertanda tangan Kepala KUA"
+    ],
+    "id": 45,
+    "category": "KONSULTASI_SYARIAH",
+    "title": "Kalibrasi Arah Kiblat Masjid / Musala / Pemukiman",
+    "subtitle": "Pengukuran presisi arah kiblat menggunakan metode Rashdul Qiblah, theodolite / kompas falakiyah terkalibrasi",
+    "legalBasis": "Pedoman Pembinaan Syariah & Hisab Rukyat Kemenag RI",
+    "processingTime": "1 Hari Pengukuran Lapangan",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Berita Acara dan Sertifikat Arah Kiblat Resmi KUA Biringbulu",
+    "targetAudience": "Pengurus Takmir Masjid, Musala, Panitia Pembangunan, Warga"
+  },
+  {
+    "requirements": [
+      "Surat Permohonan Bimbingan / Khotib / Penceramah dari takmir atau kelompok warga",
+      "Waktu dan tema kajian yang diinginkan (Akidah, Akhlak, Fikih, Moderasi)"
+    ],
+    "procedures": [
+      "Penugasan Penyuluh Agama Islam PNS / PPPK / Non-PNS KUA Biringbulu ke desa terkait",
+      "Pelaksanaan bimbingan dakwah interaktif dan tadarus Al-Quran",
+      "Evaluasi perkembangan pemahaman keagamaan jamaah binaan"
+    ],
+    "id": 46,
+    "category": "PENERANGAN_ISLAM",
+    "title": "Bimbingan dan Penyuluhan Keagamaan",
+    "subtitle": "Penyuluhan materi keislaman, bimbingan mualaf, pengentasan buta aksara Al-Quran di desa se-Biringbulu",
+    "legalBasis": "Kepdirjen Bimas Islam tentang Petunjuk Teknis Jabatan Fungsional Penyuluh Agama Islam",
+    "processingTime": "Sesuai Jadwal Rutin Penyuluh Desa",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Laporan Bimbingan Penyuluhan & Sertifikat Pembinaan",
+    "targetAudience": "Kelompok Binaan Desa, Majelis Taklim, Remaja Masjid, Mualaf"
+  },
+  {
+    "requirements": [
+      "Permohonan sosialisasi dari paguyuban pedagang, sekolah, atau aparat desa"
+    ],
+    "procedures": [
+      "Penyuluh Halal KUA Biringbulu menyelenggarakan sesi edukasi pentingnya konsumsi halal & thayyib",
+      "Simulasi identifikasi bahan kritis dan panduan pendaftaran label halal BPJPH",
+      "Pembagian materi panduan produk halal kemenag"
+    ],
+    "id": 47,
+    "category": "PENERANGAN_ISLAM",
+    "title": "Sosialisasi dan Edukasi Produk Halal",
+    "subtitle": "Kampanye sadar halal, sosialisasi kantin halal madrasah/sekolah, dan literasi konsumen cerdas",
+    "legalBasis": "UU No. 33 Tahun 2014 & Keputusan Kepala BPJPH Kemenag",
+    "processingTime": "Berkala / Sesuai Undangan",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Materi Sosialisasi Halal & Rekomendasi Titik Kantin Halal",
+    "targetAudience": "Masyarakat, Pedagang Makanan, Sekolah, Pengelola Pasar Biringbulu"
+  },
+  {
+    "requirements": [
+      "Keikutsertaan perwakilan unsur pemuda, imam desa, dan tokoh masyarakat"
+    ],
+    "procedures": [
+      "Penyelenggaraan Forum Dialog Kerukunan dan Moderasi Beragama tingkat kecamatan",
+      "Diskusi pencegahan paham radikalisme, ujaran kebencian, dan fanatisme sempit",
+      "Penandatanganan komitmen bersama menjaga stabilitas kamtibmas keagamaan di Biringbulu"
+    ],
+    "id": 48,
+    "category": "PENERANGAN_ISLAM",
+    "title": "Pencegahan Konflik Sosial Keagamaan",
+    "subtitle": "Sosialisasi moderasi beragama, penguatan wawasan kebangsaan, dan dialog lintas tokoh pemuda",
+    "legalBasis": "Perpres No. 58 Tahun 2023 tentang Penguatan Moderasi Beragama & PMA No. 34/2016",
+    "processingTime": "Program Terpadu Berkelanjutan",
+    "cost": "Rp 0,- (Gratis)",
+    "outputDocument": "Piagam Deklarasi Kerukunan Umat & Risalah Dialog Tokoh",
+    "targetAudience": "Pemuda, Karang Taruna, Tokoh Agama, Tokoh Adat se-Kecamatan Biringbulu"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Kelurahan Lauwa",
+    "isKelurahan": true,
+    "imamDesa": "H. Syamsuddin Dg. Ngawing",
+    "penyuluh": "Ust. Ahmad Syarifuddin",
+    "mosques": 14,
+    "wakaf": 18
+  },
+  {
+    "id": 2,
+    "name": "Desa Batumalonro",
+    "isKelurahan": false,
+    "imamDesa": "Ust. Baharuddin Dg. Rapi",
+    "penyuluh": "Nurhalimah, S.Sos.I.",
+    "mosques": 12,
+    "wakaf": 15
+  },
+  {
+    "id": 3,
+    "name": "Desa Baturappe",
+    "isKelurahan": false,
+    "imamDesa": "H. Daeng Nappa",
+    "penyuluh": "Ust. Mansyur, S.H.I.",
+    "mosques": 11,
+    "wakaf": 14
+  },
+  {
+    "id": 4,
+    "name": "Desa Berutallasa",
+    "isKelurahan": false,
+    "imamDesa": "Ust. Jamaluddin",
+    "penyuluh": "Ust. Ahmad Syarifuddin",
+    "mosques": 9,
+    "wakaf": 11
+  },
+  {
+    "id": 5,
+    "name": "Desa Borimasunggu",
+    "isKelurahan": false,
+    "imamDesa": "Ust. Abdul Kadir Dg. Kulle",
+    "penyuluh": "Nurhalimah, S.Sos.I.",
+    "mosques": 10,
+    "wakaf": 13
+  },
+  {
+    "id": 6,
+    "name": "Desa Julukanaya",
+    "isKelurahan": false,
+    "imamDesa": "Ust. Muhammad Idris",
+    "penyuluh": "Ust. Mansyur, S.H.I.",
+    "mosques": 8,
+    "wakaf": 9
+  },
+  {
+    "id": 7,
+    "name": "Desa Lembangloe",
+    "isKelurahan": false,
+    "imamDesa": "Ust. H. Syarifuddin",
+    "penyuluh": "Ust. Ahmad Syarifuddin",
+    "mosques": 13,
+    "wakaf": 16
+  },
+  {
+    "id": 8,
+    "name": "Desa Pencong",
+    "isKelurahan": false,
+    "imamDesa": "Ust. Dg. Tarang",
+    "penyuluh": "Nurhalimah, S.Sos.I.",
+    "mosques": 15,
+    "wakaf": 21
+  },
+  {
+    "id": 9,
+    "name": "Desa Taring",
+    "isKelurahan": false,
+    "imamDesa": "Ust. Amirullah Dg. Talli",
+    "penyuluh": "Ust. Mansyur, S.H.I.",
+    "mosques": 12,
+    "wakaf": 14
+  },
+  {
+    "id": 10,
+    "name": "Kelurahan Tonrorita",
+    "isKelurahan": true,
+    "imamDesa": "H. Muh. Yahya Dg. Tompo",
+    "penyuluh": "Ust. Ahmad Syarifuddin",
+    "mosques": 16,
+    "wakaf": 24
+  },
+  {
+    "id": 11,
+    "name": "Desa Parangloe",
+    "isKelurahan": false,
+    "imamDesa": "Ust. M. Tahir Dg. Ronrong",
+    "penyuluh": "Nurhalimah, S.Sos.I.",
+    "mosques": 7,
+    "wakaf": 8
+  }
+]

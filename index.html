@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTSP Online - KUA Kecamatan Biringbulu Kab. Gowa</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            kemenag: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#004D40',
+              950: '#022c22'
+            },
+            gold: {
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-header {
+      background: rgba(0, 77, 64, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-emerald-200">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-emerald-950 text-emerald-100 text-xs py-2 px-4 border-b border-emerald-800/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-700 text-white">RESMI</span>
+        <span>Pelayanan Terpadu Satu Pintu (PTSP) KUA Kec. Biringbulu - Kemenag Kab. Gowa</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-medium">
+        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400"></i> Jam Kerja: 07.30 - 16.00 WITA</span>
+        <a href="https://wa.me/6281241193634" target="_blank" class="flex items-center gap-1 text-emerald-300 hover:text-white transition">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 0812-4119-3634 (WhatsApp PTSP)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <header class="sticky top-0 z-40 glass-header text-white shadow-lg border-b border-emerald-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-3.5 cursor-pointer" onclick="navigateTo('home')">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-400 p-2 shadow-inner flex items-center justify-center border border-emerald-300/30">
+            <!-- Icon Kemenag / Mosque -->
+            <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
+              <path d="M12 2L4 7v2h16V7l-8-5zm-6 9v7h2v-7H6zm4 0v7h4v-7h-4zm6 0v7h2v-7h-2zM2 20v2h20v-2H2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-xl font-bold tracking-tight text-white leading-none">KUA BIRINGBULU</h1>
+              <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold">DIGITAL</span>
+            </div>
+            <p class="text-xs text-emerald-200 mt-1 font-medium">Kementerian Agama Kabupaten Gowa • Prov. Sulawesi Selatan</p>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <button onclick="navigateTo('home')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-white hover:bg-emerald-800/80" data-page="home">
+            <i data-lucide="layout-grid" class="w-4 h-4"></i> Beranda
+          </button>
+          <button onclick="navigateTo('services')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="services">
+            <i data-lucide="layers" class="w-4 h-4"></i> 48 Layanan PTSP
+          </button>
+          <button onclick="navigateTo('track')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="track">
+            <i data-lucide="search" class="w-4 h-4"></i> Lacak Berkas
+          </button>
+          <button onclick="navigateTo('syariah')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="syariah">
+            <i data-lucide="compass" class="w-4 h-4"></i> Konsultasi & Kiblat
+          </button>
+          <button onclick="navigateTo('profile')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="profile">
+            <i data-lucide="building-2" class="w-4 h-4"></i> Profil KUA
+          </button>
+          <button onclick="navigateTo('admin')" class="ml-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-400 text-emerald-950 hover:bg-amber-300 transition flex items-center gap-1.5 shadow-md hover:shadow-lg">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> Loket Petugas
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden flex items-center gap-2">
+          <button onclick="navigateTo('admin')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-400 text-emerald-950">
+            Loket
+          </button>
+          <button id="mobileMenuBtn" class="p-2 rounded-lg bg-emerald-800 text-white focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="md:hidden hidden bg-emerald-900 border-t border-emerald-800 px-4 pt-2 pb-4 space-y-1">
+      <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-white hover:bg-emerald-800 flex items-center gap-2.5">
+        <i data-lucide="layout-grid" class="w-4 h-4"></i> Beranda
+      </button>
+      <button onclick="navigateTo('services'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+        <i data-lucide="layers" class="w-4 h-4"></i> 48 Layanan PTSP
+      </button>
+      <button onclick="navigateTo('track'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+        <i data-lucide="search" class="w-4 h-4"></i> Lacak Berkas Permohonan
+      </button>
+      <button onclick="navigateTo('syariah'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+        <i data-lucide="compass" class="w-4 h-4"></i> Konsultasi Syariah & Kiblat
+      </button>
+      <button onclick="navigateTo('profile'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+        <i data-lucide="building-2" class="w-4 h-4"></i> Profil KUA & Desa
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Dynamic Content Container -->
+  <main id="appContent" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Konten halaman dinamis dimuat via main.js -->
+  </main>
+
+  <!-- Modal Detail & Form Pengajuan -->
+  <div id="serviceModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border border-slate-100 animate-in fade-in zoom-in duration-200">
+      <div id="modalHeader" class="bg-gradient-to-r from-emerald-900 to-emerald-800 text-white p-6 flex justify-between items-start">
+        <!-- Judul Layanan -->
+      </div>
+      <div id="modalBody" class="p-6 overflow-y-auto custom-scrollbar flex-grow space-y-6">
+        <!-- Syarat, Prosedur, dan Form -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-sm border-t border-slate-800 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 text-white font-bold text-lg mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+              <i data-lucide="landmark" class="w-4 h-4"></i>
+            </div>
+            KUA KECAMATAN BIRINGBULU
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-md">
+            Pusat Pelayanan Terpadu Satu Pintu (PTSP) Digital Kantor Urusan Agama Kecamatan Biringbulu, Kantor Kementerian Agama Kabupaten Gowa, Provinsi Sulawesi Selatan.
+          </p>
+          <div class="text-xs text-slate-400 space-y-1">
+            <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i> Jl. Poros Malakaji - Biringbulu, Kab. Gowa 92174</p>
+            <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i> kua.biringbulu@kemenag.go.id</p>
+            <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> 0812-4119-3634 (Layanan WhatsApp PTSP)</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Wilayah Kerja (11 Desa)</h4>
+          <ul class="text-xs space-y-1.5 text-slate-400">
+            <li class="font-medium text-emerald-400">• Kelurahan Lauwa</li>
+            <li class="font-medium text-emerald-400">• Kelurahan Tonrorita</li>
+            <li>• Desa Batumalonro</li>
+            <li>• Desa Baturappe</li>
+            <li>• Desa Berutallasa</li>
+            <li>• Desa Borimasunggu</li>
+            <li>• Desa Julukanaya</li>
+            <li>• Desa Lembangloe</li>
+            <li>• Desa Pencong</li>
+            <li>• Desa Taring</li>
+            <li>• Desa Parangloe</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Integritas & Anti Pungli</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">
+            Nikah di Balai Nikah KUA pada hari & jam kerja adalah <strong class="text-emerald-400 font-bold">Rp 0,- (GRATIS)</strong>. Seluruh layanan PTSP bebas dari pungutan liar.
+          </p>
+          <div class="p-3 rounded-xl bg-emerald-950 border border-emerald-800 text-[11px] text-emerald-200">
+            <strong class="text-amber-400 block mb-1">Pemberitahuan:</strong>
+            Laporkan segala indikasi pungutan liar ke Satgas Pengawasan Internal Kemenag.
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p>© 2026 KUA Kecamatan Biringbulu Kabupaten Gowa. Hak Cipta Dilindungi.</p>
+        <p class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Server Aktif & Terhubung ke Vercel Cloud Platform
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load Data and Main Script -->
+  <script src="app_data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

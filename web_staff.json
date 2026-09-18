@@ -1,0 +1,42 @@
+[
+  {
+    "id": "staff_1",
+    "name": "Drs. H. Muhammad Amin, M.H.",
+    "title": "Kepala KUA & PPAIW",
+    "nip": "19750310 200212 1 003",
+    "role": "Pimpinan KUA & Pejabat Pembuat Akta Ikrar Wakaf",
+    "serviceArea": "Wilayah Kerja Seluruh Kecamatan Biringbulu (11 Desa/Kelurahan)",
+    "phone": "0811-4422-0011",
+    "status": "Siaga di Kantor KUA - Melayani konsultasi pimpinan & legalisasi dokumen"
+  },
+  {
+    "id": "staff_2",
+    "name": "H. Ahmad Fauzi, S.HI., M.Pd.",
+    "title": "Penghulu Ahli Muda",
+    "nip": "19840615 200912 1 004",
+    "role": "Pemeriksa Berkas Nikah, Pelaksana Akad & Kursus Catin (Bimwin)",
+    "serviceArea": "Kecamatan Biringbulu (Tonrorita, Lauwa, Batumalonro, Pencong, Baturappe)",
+    "phone": "0812-4567-8901",
+    "status": "Siaga Pemeriksaan Berkas Catin & Jadwal Akad Nikah"
+  },
+  {
+    "id": "staff_3",
+    "name": "Ustadz H. Syamsuddin, S.Ag., M.Sos.",
+    "title": "Penyuluh Agama Islam Ahli Pertama",
+    "nip": "19820504 201411 1 002",
+    "role": "Pembina Kemasjidan (SIMAS), Kalibrasi Kiblat, Pendamping Produk Halal (PPH) & Fikih Waris",
+    "serviceArea": "Kelurahan Lauwa, Lembangloe, Berutallasa, Borimasunggu, Taring, Parangloe",
+    "phone": "0813-5544-3322",
+    "status": "Siaga Konsultasi Syariah, Kalibrasi Kiblat & Sertifikat Halal"
+  },
+  {
+    "id": "staff_4",
+    "name": "Andi Muhammad Risal, S.Kom.",
+    "title": "Pengelola Administrasi PTSP & SIMKAH",
+    "nip": "19920814 202012 1 007",
+    "role": "Front Office 48 Layanan PTSP, Verifikasi Berkas Digital & Operator SIMKAH Gen 4",
+    "serviceArea": "Loket PTSP Kantor KUA Kecamatan Biringbulu",
+    "phone": "0812-4119-3634",
+    "status": "Siaga di Loket PTSP - Verifikasi Berkas Online & Nomor Resi"
+  }
+]
