@@ -52,6 +52,7 @@ import com.example.model.KuaServiceCategory
 import com.example.model.KuaServiceItem
 import com.example.ui.components.KuaHeaderBadge
 import com.example.ui.screens.ApplicationFormScreen
+import com.example.ui.screens.FullMenuGridScreen
 import com.example.ui.screens.HomeScreen
 import com.example.ui.screens.ProfileOfficeScreen
 import com.example.ui.screens.ServiceDetailScreen
@@ -80,6 +81,7 @@ class MainActivity : ComponentActivity() {
 
 sealed class ScreenDestination {
     object MainTabs : ScreenDestination()
+    object FullMenu : ScreenDestination()
     data class ServiceDetail(val serviceId: Int) : ScreenDestination()
     data class ApplicationForm(val serviceId: Int) : ScreenDestination()
 }
@@ -116,6 +118,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                 currentDestination = ScreenDestination.ServiceDetail(serviceId)
             }
             currentDestination is ScreenDestination.ServiceDetail -> {
+                currentDestination = ScreenDestination.MainTabs
+            }
+            currentDestination is ScreenDestination.FullMenu -> {
                 currentDestination = ScreenDestination.MainTabs
             }
             selectedTab != 0 -> {
@@ -209,6 +214,9 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                                 },
                                 onNavigateToProfile = {
                                     viewModel.setTab(4)
+                                },
+                                onNavigateToFullMenu = {
+                                    currentDestination = ScreenDestination.FullMenu
                                 }
                             )
                             1 -> ServicesListScreen(
@@ -261,6 +269,37 @@ fun KuaAppRoot(viewModel: KuaViewModel) {
                                 onUpdateCustomLogoUri = { viewModel.updateCustomLogoUri(it) }
                             )
                         }
+                    }
+
+                    is ScreenDestination.FullMenu -> {
+                        FullMenuGridScreen(
+                            onBack = { currentDestination = ScreenDestination.MainTabs },
+                            onNavigateToServices = { cat ->
+                                viewModel.setCategoryFilter(cat)
+                                viewModel.setTab(1)
+                                currentDestination = ScreenDestination.MainTabs
+                            },
+                            onNavigateToServiceDetail = { serviceId ->
+                                currentDestination = ScreenDestination.ServiceDetail(serviceId)
+                            },
+                            onNavigateToTracking = { code ->
+                                viewModel.setTrackingInput(code)
+                                if (code.isNotBlank()) {
+                                    viewModel.searchTrackingCode(code)
+                                }
+                                viewModel.setTab(2)
+                                currentDestination = ScreenDestination.MainTabs
+                            },
+                            onNavigateToSmartSyariah = { subTab ->
+                                smartSyariahInitialSubTab = subTab
+                                viewModel.setTab(3)
+                                currentDestination = ScreenDestination.MainTabs
+                            },
+                            onNavigateToProfile = {
+                                viewModel.setTab(4)
+                                currentDestination = ScreenDestination.MainTabs
+                            }
+                        )
                     }
 
                     is ScreenDestination.ServiceDetail -> {

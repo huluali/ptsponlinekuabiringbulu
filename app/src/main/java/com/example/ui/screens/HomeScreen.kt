@@ -42,6 +42,7 @@ import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SmartToy
 import androidx.compose.material.icons.filled.Verified
+import androidx.compose.material.icons.filled.Widgets
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -95,6 +96,7 @@ fun HomeScreen(
     onNavigateToTracking: (String) -> Unit,
     onNavigateToSmartSyariah: (Int) -> Unit,
     onNavigateToProfile: () -> Unit,
+    onNavigateToFullMenu: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     var quickTrackingCode by remember { mutableStateOf("") }
@@ -399,13 +401,13 @@ fun HomeScreen(
                         testTag = "action_ai_consult"
                     )
                     ActionGridItem(
-                        title = "Profil 11 Desa",
-                        desc = "Aparatur, Imam & Wilayah",
-                        icon = Icons.Filled.LocationOn,
-                        iconColor = Color(0xFFE11D48),
+                        title = "Menu Lengkap",
+                        desc = "Kepegawaian & Semua",
+                        icon = Icons.Filled.Widgets,
+                        iconColor = Color(0xFFB71C1C),
                         modifier = Modifier.weight(1f),
-                        onClick = onNavigateToProfile,
-                        testTag = "action_profile"
+                        onClick = onNavigateToFullMenu,
+                        testTag = "action_full_menu"
                     )
                 }
             }
