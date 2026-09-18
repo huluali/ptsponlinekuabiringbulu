@@ -137,8 +137,8 @@ fun HomeScreen(
                         .background(
                             Brush.verticalGradient(
                                 colors = listOf(
-                                    Color.Black.copy(alpha = 0.35f),
-                                    KuaGreenPrimaryDarker.copy(alpha = 0.94f)
+                                    Color.Black.copy(alpha = 0.40f),
+                                    Color(0xFF8B0000).copy(alpha = 0.94f) // Pangadakkang Red Dark
                                 )
                             )
                         )
@@ -151,16 +151,25 @@ fun HomeScreen(
                         .padding(18.dp),
                     verticalArrangement = Arrangement.Bottom
                 ) {
-                    Surface(
-                        color = Color(0xFFFFD54F),
-                        shape = RoundedCornerShape(6.dp)
-                    ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Surface(
+                            color = Color(0xFFFFD700), // Yellow gold
+                            shape = RoundedCornerShape(4.dp)
+                        ) {
+                            Text(
+                                text = "PANGADAKKANG",
+                                color = Color(0xFF7F1D1D),
+                                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.ExtraBold),
+                                modifier = Modifier.padding(horizontal = 7.dp, vertical = 2.dp),
+                                fontSize = 10.sp
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            text = "PTSP DIGITAL RESMI KEMENAG",
-                            color = Color(0xFF003823),
-                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.ExtraBold),
-                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
-                            fontSize = 10.sp
+                            text = "Kemenag Kab. Gowa",
+                            color = Color.White.copy(alpha = 0.92f),
+                            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+                            fontSize = 11.5.sp
                         )
                     }
                     Spacer(modifier = Modifier.height(6.dp))
@@ -173,9 +182,9 @@ fun HomeScreen(
                         color = Color.White
                     )
                     Text(
-                        text = "Kementerian Agama Kabupaten Gowa • 48 Standar Layanan Publik",
+                        text = "Pelayanan Keagamaan Prima & Bebas Pungli • 11 Desa/Kelurahan",
                         style = MaterialTheme.typography.bodySmall,
-                        color = Color.White.copy(alpha = 0.9f),
+                        color = Color.White.copy(alpha = 0.92f),
                         fontSize = 12.sp
                     )
                 }
@@ -200,111 +209,58 @@ fun HomeScreen(
                         .padding(14.dp),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
-                    StatItem(number = "48", label = "Jenis Layanan", color = KuaGreenPrimary)
+                    StatItem(number = "48", label = "Standar Layanan", color = Color(0xFFB71C1C))
                     Divider(modifier = Modifier.height(36.dp).width(1.dp), color = Color(0xFFE2E8F0))
-                    StatItem(number = "Rp 0,-", label = "Nikah di Balai", color = KuaGoldSecondary)
+                    StatItem(number = "Rp 0,-", label = "Nikah di Balai", color = Color(0xFF059669))
                     Divider(modifier = Modifier.height(36.dp).width(1.dp), color = Color(0xFFE2E8F0))
                     StatItem(number = "11", label = "Desa / Wilayah", color = Color(0xFF0284C7))
                 }
             }
         }
 
-        // 2.5 Quick Kepegawaian & Governance Card Banner
+        // 3. Quick Tracking Box (Lacak Berkas)
         item {
             Card(
                 shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFFF8FAFC)),
-                border = BorderStroke(1.dp, Color(0xFFE2E8F0)),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFBEB)), // Warm pastel gold/amber
+                border = BorderStroke(1.dp, Color(0xFFFDE68A)),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 6.dp)
-                    .clip(RoundedCornerShape(16.dp))
-                    .clickable(onClick = onNavigateToProfile)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(14.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = MaterialTheme.colorScheme.primaryContainer,
-                        modifier = Modifier.size(44.dp)
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Icon(
-                                imageVector = Icons.Filled.AccountBalance,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                modifier = Modifier.size(24.dp)
-                            )
-                        }
-                    }
-                    Spacer(modifier = Modifier.width(12.dp))
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = "Profil KUA & Tata Kelola Kantor",
-                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                            text = "Struktur Aparatur, Kepala KUA, Penghulu & Wilayah Desa/Kelurahan",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = 11.5.sp
-                        )
-                    }
-                    Icon(
-                        imageVector = Icons.Filled.ArrowForward,
-                        contentDescription = "Buka Profil KUA",
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(20.dp)
-                    )
-                }
-            }
-        }
-
-        // 3. Quick Tracking Box
-        item {
-            Card(
-                shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFFF0FDF4)),
-                border = BorderStroke(1.dp, Color(0xFFBBF7D0)),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 6.dp)
+                    .padding(horizontal = 16.dp)
+                    .padding(top = 12.dp)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Box(
                             modifier = Modifier
-                                .size(32.dp)
+                                .size(34.dp)
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(KuaGreenPrimary.copy(alpha = 0.15f)),
+                                .background(Color(0xFFF59E0B).copy(alpha = 0.20f)),
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
                                 imageVector = Icons.Filled.QrCodeScanner,
                                 contentDescription = null,
-                                tint = KuaGreenPrimary,
-                                modifier = Modifier.size(18.dp)
+                                tint = Color(0xFFB45309),
+                                modifier = Modifier.size(20.dp)
                             )
                         }
                         Spacer(modifier = Modifier.width(10.dp))
-                        Text(
-                            text = "Lacak Permohonan Berkas Layanan",
-                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
+                        Column {
+                            Text(
+                                text = "Lacak Permohonan Layanan",
+                                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                                color = Color(0xFF92400E)
+                            )
+                            Text(
+                                text = "Cek progres berkas secara transparan & real-time",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = Color(0xFFB45309),
+                                fontSize = 11.sp
+                            )
+                        }
                     }
-                    Spacer(modifier = Modifier.height(4.dp))
-                    Text(
-                        text = "Masukkan Kode Tracking (misal: KB-2608-4821) untuk verifikasi progres",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        fontSize = 11.5.sp
-                    )
+
                     Spacer(modifier = Modifier.height(10.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -313,7 +269,7 @@ fun HomeScreen(
                         OutlinedTextField(
                             value = quickTrackingCode,
                             onValueChange = { quickTrackingCode = it },
-                            placeholder = { Text("Contoh: KB-2608-...", fontSize = 13.sp) },
+                            placeholder = { Text("Contoh: KB-2608-...", fontSize = 12.5.sp) },
                             singleLine = true,
                             modifier = Modifier
                                 .weight(1f)
@@ -322,8 +278,8 @@ fun HomeScreen(
                             colors = OutlinedTextFieldDefaults.colors(
                                 focusedContainerColor = Color.White,
                                 unfocusedContainerColor = Color.White,
-                                focusedBorderColor = KuaGreenPrimary,
-                                unfocusedBorderColor = Color(0xFFCBD5E1)
+                                focusedBorderColor = Color(0xFFD97706),
+                                unfocusedBorderColor = Color(0xFFFCD34D)
                             ),
                             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
                             keyboardActions = KeyboardActions(onSearch = {
@@ -342,8 +298,10 @@ fun HomeScreen(
                                 }
                             },
                             shape = RoundedCornerShape(10.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
-                            modifier = Modifier.height(52.dp).testTag("quick_tracking_btn")
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFB71C1C)),
+                            modifier = Modifier
+                                .height(52.dp)
+                                .testTag("quick_tracking_btn")
                         ) {
                             Text("Lacak", fontWeight = FontWeight.Bold)
                         }
@@ -352,15 +310,32 @@ fun HomeScreen(
             }
         }
 
-        // 4. Fast Action Feature Grid
+        // 4. Layanan Terpadu Kemenag Gowa Grid
         item {
-            Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-                Text(
-                    text = "Menu & Layanan Unggulan",
-                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Spacer(modifier = Modifier.height(10.dp))
+            Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column {
+                        Text(
+                            text = "Layanan Terpadu Kemenag",
+                            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Text(
+                            text = "Akses cepat fitur syariah & tata kelola KUA",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            fontSize = 11.5.sp
+                        )
+                    }
+                    TextButton(onClick = { onNavigateToServices(null) }) {
+                        Text("Semua (48)", color = Color(0xFFB71C1C), fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                    }
+                }
+                Spacer(modifier = Modifier.height(8.dp))
 
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -368,18 +343,18 @@ fun HomeScreen(
                 ) {
                     ActionGridItem(
                         title = "48 Layanan KUA",
-                        desc = "Katalog & Syarat",
+                        desc = "Katalog & Pengajuan",
                         icon = Icons.Filled.Verified,
-                        iconColor = KuaGreenPrimary,
+                        iconColor = Color(0xFFB71C1C),
                         modifier = Modifier.weight(1f),
                         onClick = { onNavigateToServices(null) },
                         testTag = "action_all_services"
                     )
                     ActionGridItem(
-                        title = "Simulasi Biaya Nikah",
-                        desc = "KUA vs Luar KUA",
+                        title = "Biaya Nikah",
+                        desc = "Balai Rp 0 / Luar KUA",
                         icon = Icons.Filled.Calculate,
-                        iconColor = KuaGoldSecondary,
+                        iconColor = Color(0xFF059669),
                         modifier = Modifier.weight(1f),
                         onClick = { onNavigateToSmartSyariah(2) },
                         testTag = "action_marriage_sim"
@@ -392,7 +367,7 @@ fun HomeScreen(
                 ) {
                     ActionGridItem(
                         title = "Arah Kiblat",
-                        desc = "Kompas Presisi",
+                        desc = "Kompas Presisi 291°",
                         icon = Icons.Filled.CompassCalibration,
                         iconColor = Color(0xFF0284C7),
                         modifier = Modifier.weight(1f),
@@ -401,9 +376,9 @@ fun HomeScreen(
                     )
                     ActionGridItem(
                         title = "Kalkulator Zakat",
-                        desc = "Mal, Profesi, Jagung",
+                        desc = "Mal, Profesi & Jagung",
                         icon = Icons.Filled.AccountBalance,
-                        iconColor = Color(0xFF059669),
+                        iconColor = Color(0xFFD97706),
                         modifier = Modifier.weight(1f),
                         onClick = { onNavigateToSmartSyariah(1) },
                         testTag = "action_zakat"
@@ -415,8 +390,8 @@ fun HomeScreen(
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     ActionGridItem(
-                        title = "Tanya Penghulu AI",
-                        desc = "Konsultasi Syariah",
+                        title = "Syariah AI",
+                        desc = "Tanya Penghulu Pintar",
                         icon = Icons.Filled.SmartToy,
                         iconColor = Color(0xFF7C3AED),
                         modifier = Modifier.weight(1f),
@@ -425,7 +400,7 @@ fun HomeScreen(
                     )
                     ActionGridItem(
                         title = "Profil 11 Desa",
-                        desc = "Imam & Penyuluh",
+                        desc = "Aparatur, Imam & Wilayah",
                         icon = Icons.Filled.LocationOn,
                         iconColor = Color(0xFFE11D48),
                         modifier = Modifier.weight(1f),
@@ -637,13 +612,13 @@ fun CategoryCardItem(
                 modifier = Modifier
                     .size(36.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)),
+                    .background(Color(0xFFB71C1C).copy(alpha = 0.10f)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = getCategoryIcon(category),
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
+                    tint = Color(0xFFB71C1C),
                     modifier = Modifier.size(20.dp)
                 )
             }
@@ -690,13 +665,13 @@ fun PopularServiceCard(
                 modifier = Modifier
                     .size(38.dp)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(MaterialTheme.colorScheme.primaryContainer),
+                    .background(Color(0xFFB71C1C).copy(alpha = 0.12f)),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = "#${service.id}",
                     style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.ExtraBold),
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                    color = Color(0xFFB71C1C)
                 )
             }
             Spacer(modifier = Modifier.width(12.dp))

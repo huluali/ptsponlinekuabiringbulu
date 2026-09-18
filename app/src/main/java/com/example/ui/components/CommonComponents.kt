@@ -83,8 +83,8 @@ fun getCategoryIcon(category: KuaServiceCategory): ImageVector {
 
 @Composable
 fun KuaHeaderBadge(
-    title: String = "KUA KECAMATAN BIRINGBULU",
-    subtitle: String = "Kemenag Kab. Gowa • PTSP Digital 48 Layanan Resmi",
+    title: String = "KUA BIRINGBULU",
+    subtitle: String = "Kemenag Kab. Gowa • PTSP Digital 48 Layanan",
     customLogoUri: String? = null,
     onSettingsClick: (() -> Unit)? = null,
     modifier: Modifier = Modifier
@@ -99,9 +99,9 @@ fun KuaHeaderBadge(
                 .background(
                     Brush.horizontalGradient(
                         colors = listOf(
-                            KuaGreenPrimaryDarker,
-                            KuaGreenPrimary,
-                            Color(0xFF0F766E)
+                            Color(0xFF8B0000), // Pangadakkang Red Dark
+                            Color(0xFFB71C1C), // Pangadakkang Maroon/Red
+                            Color(0xFF991B1B)  // Crimson Red
                         )
                     )
                 )
@@ -159,7 +159,7 @@ fun KuaHeaderBadge(
                         ) {
                             Text(
                                 text = "KEMENAG",
-                                color = Color(0xFF003823),
+                                color = Color(0xFF7F1D1D),
                                 style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.ExtraBold),
                                 modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp),
                                 fontSize = 9.sp
@@ -169,7 +169,7 @@ fun KuaHeaderBadge(
                     Text(
                         text = subtitle,
                         style = MaterialTheme.typography.bodySmall,
-                        color = Color.White.copy(alpha = 0.90f),
+                        color = Color.White.copy(alpha = 0.92f),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         fontSize = 11.sp
@@ -183,7 +183,7 @@ fun KuaHeaderBadge(
                         modifier = Modifier
                             .size(36.dp)
                             .clip(CircleShape)
-                            .background(Color.White.copy(alpha = 0.15f))
+                            .background(Color.White.copy(alpha = 0.18f))
                             .testTag("header_btn_settings")
                     ) {
                         Icon(

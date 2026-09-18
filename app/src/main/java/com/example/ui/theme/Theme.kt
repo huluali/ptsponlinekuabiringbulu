@@ -36,14 +36,14 @@ private val DarkColorScheme =
 
 private val LightColorScheme =
   lightColorScheme(
-    primary = KuaGreenPrimary,
+    primary = PangadakkangRed,
     onPrimary = Color.White,
-    primaryContainer = KuaGreenPrimaryContainer,
-    onPrimaryContainer = KuaGreenOnPrimaryContainer,
-    secondary = KuaGoldSecondary,
-    onSecondary = Color.White,
-    secondaryContainer = KuaGoldSecondaryContainer,
-    onSecondaryContainer = KuaGoldOnSecondaryContainer,
+    primaryContainer = Color(0xFFFFEBEE),
+    onPrimaryContainer = Color(0xFF7F1D1D),
+    secondary = PangadakkangYellow,
+    onSecondary = Color(0xFF78350F),
+    secondaryContainer = Color(0xFFFFFBEB),
+    onSecondaryContainer = Color(0xFF92400E),
     tertiary = KuaTealTertiary,
     onTertiary = Color.White,
     tertiaryContainer = KuaTealTertiaryContainer,

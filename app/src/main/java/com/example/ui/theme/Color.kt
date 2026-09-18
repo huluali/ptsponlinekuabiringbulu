@@ -9,6 +9,14 @@ val KuaGreenPrimaryLight = Color(0xFF00875A)
 val KuaGreenPrimaryContainer = Color(0xFFE8F5EE)
 val KuaGreenOnPrimaryContainer = Color(0xFF002113)
 
+// PANGADAKKANG Kemenag Gowa Theme Colors
+val PangadakkangRed = Color(0xFFB71C1C)
+val PangadakkangRedDark = Color(0xFF8B0000)
+val PangadakkangRedLight = Color(0xFFD32F2F)
+val PangadakkangRedContainer = Color(0xFFFFEBEE)
+val PangadakkangYellow = Color(0xFFFFD700)
+val PangadakkangYellowText = Color(0xFFF59E0B)
+
 val KuaGoldSecondary = Color(0xFFB8860B)
 val KuaGoldSecondaryLight = Color(0xFFD4AF37)
 val KuaGoldSecondaryContainer = Color(0xFFFEF9E7)
