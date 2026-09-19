@@ -252,8 +252,8 @@ fun ProfileOfficeScreen(
                 Card(
                     onClick = onNavigateToIkmSurvey,
                     shape = RoundedCornerShape(14.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFBEB)),
-                    border = BorderStroke(1.dp, Color(0xFFFDE68A)),
+                    colors = CardDefaults.cardColors(containerColor = Color(0xFFE8F5EE)),
+                    border = BorderStroke(1.dp, Color(0xFFA7F3D0)),
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("office_ikm_survey_card")
@@ -264,14 +264,14 @@ fun ProfileOfficeScreen(
                     ) {
                         Surface(
                             shape = CircleShape,
-                            color = Color(0xFFF59E0B).copy(alpha = 0.15f),
+                            color = Color(0xFF006C48).copy(alpha = 0.15f),
                             modifier = Modifier.size(42.dp)
                         ) {
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
                                     imageVector = Icons.Filled.Star,
                                     contentDescription = null,
-                                    tint = Color(0xFFD97706),
+                                    tint = Color(0xFF006C48),
                                     modifier = Modifier.size(22.dp)
                                 )
                             }
@@ -279,21 +279,21 @@ fun ProfileOfficeScreen(
                         Spacer(modifier = Modifier.width(12.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Survei IKM Berbintang",
+                                text = "Survei IKM",
                                 style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                                color = Color(0xFF92400E)
+                                color = Color(0xFF004D34)
                             )
                             Text(
                                 text = "Laporan & evaluasi kepuasan masyarakat KUA Biringbulu",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = Color(0xFFB45309),
+                                color = Color(0xFF065F46),
                                 fontSize = 11.5.sp
                             )
                         }
                         Icon(
                             imageVector = Icons.Filled.ChevronRight,
                             contentDescription = null,
-                            tint = Color(0xFFD97706),
+                            tint = Color(0xFF006C48),
                             modifier = Modifier.size(20.dp)
                         )
                     }

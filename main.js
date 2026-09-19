@@ -305,22 +305,22 @@ function renderHomePage(container) {
       </div>
     </div>
 
-    <!-- Survei IKM Berbintang Banner -->
-    <div class="mb-12 bg-gradient-to-r from-red-950 via-rose-900 to-amber-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-rose-800/50 relative overflow-hidden">
-      <div class="absolute -right-16 -top-16 w-60 h-60 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+    <!-- Survei IKM Banner -->
+    <div class="mb-12 bg-gradient-to-r from-emerald-950 via-emerald-900 to-teal-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-emerald-800/60 relative overflow-hidden">
+      <div class="absolute -right-16 -top-16 w-60 h-60 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
       <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
         <div class="max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-800/80 border border-rose-600/40 text-amber-200 text-xs font-bold uppercase tracking-wider mb-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/80 border border-emerald-600/40 text-amber-200 text-xs font-bold uppercase tracking-wider mb-3">
             <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-300 text-amber-300"></i>
             Indeks Kepuasan Masyarakat (IKM) Resmi
           </div>
           <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight text-white mb-2">
-            Survei IKM Berbintang KUA Biringbulu
+            Survei IKM
           </h3>
-          <p class="text-xs sm:text-sm text-rose-100/90 leading-relaxed mb-4">
+          <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed mb-4">
             Bantu kami menjaga komitmen Wilayah Bebas dari Korupsi (WBK) dan pelayanan prima. Berikan penilaian bintang dan ulasan objektif atas 48 standar pelayanan KUA Kecamatan Biringbulu.
           </p>
-          <div class="flex flex-wrap items-center gap-4 text-xs font-semibold text-rose-200">
+          <div class="flex flex-wrap items-center gap-4 text-xs font-semibold text-emerald-200">
             <span class="flex items-center gap-1.5 bg-black/25 px-3 py-1.5 rounded-xl border border-white/10">
               <span class="text-amber-400 font-bold">⭐ 4.96 / 5.0</span> (Mutu A: Sangat Baik)
             </span>
@@ -331,7 +331,7 @@ function renderHomePage(container) {
         </div>
         <div class="flex flex-col sm:flex-row lg:flex-col gap-3 w-full lg:w-auto shrink-0">
           <button onclick="navigateTo('ikm', { activeTab: 1 })" class="px-6 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-emerald-950 font-bold text-sm shadow-lg transition flex items-center justify-center gap-2 transform active:scale-95">
-            <i data-lucide="pencil" class="w-4 h-4"></i> Isi Survei IKM Sekarang
+            <i data-lucide="pencil" class="w-4 h-4"></i> Isi Survei IKM
           </button>
           <button onclick="navigateTo('ikm', { activeTab: 0 })" class="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center justify-center gap-2">
             <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Lihat Hasil & Statistik
@@ -479,7 +479,7 @@ function renderServicesPage(container, targetCategory) {
           <div>
             <div class="flex items-center justify-between gap-2 mb-2">
               <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
-                #${s.id}
+                Layanan ${s.id < 10 ? '0' + s.id : s.id}
               </span>
               <span class="text-[10px] font-medium text-slate-500 flex items-center gap-1">
                 <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i> ${s.processingTime || '1 Hari Kerja'}
@@ -1056,18 +1056,18 @@ function renderProfilePage(container) {
         </div>
       </div>
 
-      <!-- Banner Survei IKM Berbintang -->
-      <div onclick="navigateTo('ikm')" class="cursor-pointer bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/90 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex items-center justify-between gap-4">
+      <!-- Banner Survei IKM -->
+      <div onclick="navigateTo('ikm')" class="cursor-pointer bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/90 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex items-center justify-between gap-4">
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-600 flex items-center justify-center shrink-0">
-            <i data-lucide="star" class="w-6 h-6 fill-amber-500 text-amber-500"></i>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-sm">
+            <i data-lucide="star" class="w-6 h-6 fill-amber-300 text-amber-300"></i>
           </div>
           <div>
-            <h4 class="font-bold text-amber-950 text-base">Survei IKM Berbintang</h4>
-            <p class="text-xs text-amber-800/90 mt-0.5">Laporan & evaluasi kepuasan masyarakat KUA Biringbulu berdasarkan PermenPAN-RB No. 14/2017</p>
+            <h4 class="font-bold text-emerald-950 text-base">Survei IKM</h4>
+            <p class="text-xs text-emerald-800/90 mt-0.5">Laporan & evaluasi kepuasan masyarakat KUA Biringbulu berdasarkan PermenPAN-RB No. 14/2017</p>
           </div>
         </div>
-        <button class="px-4 py-2 rounded-xl bg-amber-500 text-white font-bold text-xs hover:bg-amber-600 transition flex items-center gap-1.5 shrink-0 shadow-sm">
+        <button class="px-4 py-2 rounded-xl bg-emerald-700 text-white font-bold text-xs hover:bg-emerald-800 transition flex items-center gap-1.5 shrink-0 shadow-sm">
           <span>Buka Survei</span>
           <i data-lucide="chevron-right" class="w-4 h-4"></i>
         </button>
@@ -1290,33 +1290,33 @@ function renderIkmPage(container, options = {}) {
   container.innerHTML = `
     <div class="max-w-4xl mx-auto space-y-6">
       
-      <!-- Header Banner (Pangadakkang Maroon & Gold) -->
-      <div class="bg-gradient-to-r from-red-950 via-rose-900 to-amber-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-rose-800/60 relative overflow-hidden">
+      <!-- Header Banner (Emerald PTSP Base Color) -->
+      <div class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-teal-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-emerald-800/60 relative overflow-hidden">
         <div class="absolute -right-12 -top-12 w-48 h-48 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative z-10">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-800/80 border border-rose-600/40 text-amber-200 text-xs font-bold uppercase tracking-wider mb-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/80 border border-emerald-600/40 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
               <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-300"></i> Kemenag Kab. Gowa • Zona Integritas WBK
             </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Survei IKM Berbintang</h2>
-            <p class="text-xs sm:text-sm text-rose-200 mt-1 max-w-xl">
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Survei IKM</h2>
+            <p class="text-xs sm:text-sm text-emerald-200 mt-1 max-w-xl">
               Indeks Kepuasan Masyarakat atas 48 Standar Layanan Kantor Urusan Agama (KUA) Kec. Biringbulu berdasarkan PermenPAN-RB No. 14 Tahun 2017.
             </p>
           </div>
           <div class="text-right bg-white/10 px-5 py-3 rounded-2xl border border-white/15 backdrop-blur-sm shrink-0">
             <span class="text-[10px] text-amber-300 uppercase font-bold block">Indeks IKM Resmi</span>
             <span class="text-2xl font-black text-amber-300">${ikmKonversi.toFixed(1)}</span>
-            <span class="text-[11px] text-rose-200 block font-semibold">Predikat: A (Sangat Baik)</span>
+            <span class="text-[11px] text-emerald-200 block font-semibold">Predikat: A (Sangat Baik)</span>
           </div>
         </div>
       </div>
 
       <!-- Tab Switcher -->
       <div class="bg-white rounded-2xl p-1.5 border border-slate-200 shadow-sm flex items-center gap-1">
-        <button onclick="setIkmTab(0)" class="flex-1 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 ${ikmActiveTab === 0 ? 'bg-rose-900 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}">
+        <button onclick="setIkmTab(0)" class="flex-1 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 ${ikmActiveTab === 0 ? 'bg-emerald-800 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}">
           <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Hasil & Statistik
         </button>
-        <button onclick="setIkmTab(1)" class="flex-1 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 ${ikmActiveTab === 1 ? 'bg-rose-900 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}">
+        <button onclick="setIkmTab(1)" class="flex-1 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 ${ikmActiveTab === 1 ? 'bg-emerald-800 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100'}">
           <i data-lucide="pencil" class="w-4 h-4"></i> Isi Survei IKM
         </button>
       </div>
@@ -1346,7 +1346,7 @@ function renderIkmPage(container, options = {}) {
           </p>
 
           <div class="mt-6 max-w-sm mx-auto">
-            <button onclick="setIkmTab(1)" class="w-full py-3.5 px-6 rounded-2xl bg-rose-900 hover:bg-rose-800 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+            <button onclick="setIkmTab(1)" class="w-full py-3.5 px-6 rounded-2xl bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
               <i data-lucide="pencil" class="w-4 h-4"></i> Beri Penilaian Layanan Saya
             </button>
           </div>
@@ -1454,13 +1454,13 @@ function renderIkmPage(container, options = {}) {
       <!-- Tab 1: Formulir Survei IKM -->
       <div id="ikmTabForm" class="${ikmActiveTab === 1 ? 'block' : 'hidden'} space-y-6">
         
-        <!-- Apresiasi Card -->
-        <div class="bg-red-50/70 border border-red-200 rounded-2xl p-4 text-xs flex items-center gap-3 text-red-950">
-          <div class="w-10 h-10 rounded-xl bg-red-100 text-red-800 flex items-center justify-center shrink-0">
+        <!-- Apresiasi Card (Emerald Theme) -->
+        <div class="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 text-xs flex items-center gap-3 text-emerald-950">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
             <i data-lucide="thumbs-up" class="w-5 h-5"></i>
           </div>
           <div>
-            <h5 class="font-bold text-red-900">Apresiasi & Penilaian Pelayanan</h5>
+            <h5 class="font-bold text-emerald-900">Apresiasi & Penilaian Pelayanan</h5>
             <p class="text-slate-600 text-[11px] mt-0.5">Penilaian Anda membantu KUA Kecamatan Biringbulu menjaga integritas wilayah bebas korupsi dan pelayanan prima.</p>
           </div>
         </div>
@@ -1475,18 +1475,18 @@ function renderIkmPage(container, options = {}) {
               <div>
                 <label class="block font-bold text-slate-700 text-xs mb-1">Nama Lengkap (Boleh Anonim/Inisial) *</label>
                 <input type="text" id="ikmName" required value="${ikmPrefillData ? (ikmPrefillData.applicantName || '') : ''}" placeholder="Contoh: Muhammad Fadly / Dg. Rapi"
-                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-rose-800 focus:outline-none text-xs">
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-700 focus:outline-none text-xs">
               </div>
               <div>
                 <label class="block font-bold text-slate-700 text-xs mb-1">Nomor WhatsApp / HP (Opsional)</label>
                 <input type="tel" id="ikmPhone" value="${ikmPrefillData ? (ikmPrefillData.phone || '') : ''}" placeholder="08xx-xxxx-xxxx"
-                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-rose-800 focus:outline-none text-xs">
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-700 focus:outline-none text-xs">
               </div>
             </div>
 
             <div>
               <label class="block font-bold text-slate-700 text-xs mb-1">Asal Desa / Kelurahan di Biringbulu *</label>
-              <select id="ikmVillage" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-rose-800 focus:outline-none text-xs bg-white">
+              <select id="ikmVillage" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-700 focus:outline-none text-xs bg-white">
                 <option value="">-- Pilih Wilayah Domisili --</option>
                 ${(window.KUA_VILLAGES || []).map(v => `
                   <option value="${v.name}" ${ikmPrefillData && ikmPrefillData.village === v.name ? 'selected' : ''}>${v.name} (${v.isKelurahan ? 'Kelurahan' : 'Desa'})</option>
@@ -1495,16 +1495,86 @@ function renderIkmPage(container, options = {}) {
             </div>
           </div>
 
-          <!-- 2. Layanan yang Dinilai -->
+          <!-- 2. Layanan yang Dinilai (Menarik & Tanpa Tanda Pagar) -->
           <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
-            <h4 class="font-bold text-slate-900 text-sm">2. Layanan yang Diterima</h4>
-            <div>
-              <label class="block font-bold text-slate-700 text-xs mb-1">Pilih Standar Layanan KUA Biringbulu *</label>
-              <select id="ikmService" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-rose-800 focus:outline-none text-xs bg-white">
-                <option value="">-- Pilih Layanan PTSP --</option>
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <h4 class="font-bold text-slate-900 text-sm">2. Layanan yang Diterima</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Pilih salah satu dari 48 standar pelayanan KUA Biringbulu yang dinilai</p>
+              </div>
+              <span id="ikmServiceStatusBadge" class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                48 Standar Layanan
+              </span>
+            </div>
+
+            <!-- Attractive Featured Service Card -->
+            <div id="ikmSelectedCard" class="p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50/60 to-white border border-emerald-200 shadow-sm transition">
+              <div class="flex items-start gap-3.5">
+                <div id="ikmSelectedIconBox" class="w-11 h-11 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center gap-2 flex-wrap mb-1">
+                    <span id="ikmSelectedNumber" class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-emerald-700 text-white">
+                      Layanan PTSP
+                    </span>
+                    <span id="ikmSelectedCategory" class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                      Standar Kemenag
+                    </span>
+                  </div>
+                  <h5 id="ikmSelectedTitle" class="text-sm font-bold text-slate-900 leading-snug">
+                    ${ikmPrefillData && ikmPrefillData.prefilledService ? ikmPrefillData.prefilledService : 'Silakan pilih layanan di bawah'}
+                  </h5>
+                  <p id="ikmSelectedDesc" class="text-[11px] text-slate-500 mt-0.5">
+                    Gunakan pencarian cepat atau daftar pilihan untuk memilih layanan yang Anda terima.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Search & Interactive Service Picker -->
+            <div class="space-y-3 pt-1">
+              <div class="relative">
+                <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3"></i>
+                <input type="text" id="ikmServiceSearch" oninput="handleIkmServiceSearch(this.value)" placeholder="Ketik untuk mencari (contoh: nikah, wakaf, masjid, rekomendasi, halal)..."
+                  class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 focus:outline-none text-xs bg-slate-50/60">
+              </div>
+
+              <!-- Quick Category Filter Chips -->
+              <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 text-[11px]">
+                <button type="button" onclick="filterIkmServicesByCategory('ALL')" class="ikm-pill-btn px-3 py-1 rounded-full font-bold whitespace-nowrap bg-emerald-800 text-white transition" data-cat="ALL">Semua (48)</button>
+                <button type="button" onclick="filterIkmServicesByCategory('PELAYANAN_PERNIKAHAN')" class="ikm-pill-btn px-3 py-1 rounded-full font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-cat="PELAYANAN_PERNIKAHAN">Pernikahan</button>
+                <button type="button" onclick="filterIkmServicesByCategory('BIMBINGAN_PERKAWINAN')" class="ikm-pill-btn px-3 py-1 rounded-full font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-cat="BIMBINGAN_PERKAWINAN">Bimwin Catin</button>
+                <button type="button" onclick="filterIkmServicesByCategory('ZAKAT_DAN_WAKAF')" class="ikm-pill-btn px-3 py-1 rounded-full font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-cat="ZAKAT_DAN_WAKAF">Zakat & Wakaf</button>
+                <button type="button" onclick="filterIkmServicesByCategory('KEMASJIDAN')" class="ikm-pill-btn px-3 py-1 rounded-full font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-cat="KEMASJIDAN">Kemasjidan SIMAS</button>
+                <button type="button" onclick="filterIkmServicesByCategory('KONSULTASI_SYARIAH')" class="ikm-pill-btn px-3 py-1 rounded-full font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition" data-cat="KONSULTASI_SYARIAH">Syariah & Halal</button>
+              </div>
+
+              <!-- Interactive Quick Selection List (Max 6 or filtered results) -->
+              <div id="ikmQuickServiceList" class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-48 overflow-y-auto custom-scrollbar p-1">
+                ${(window.KUA_SERVICES || []).slice(0, 6).map(s => `
+                  <div onclick="selectIkmService('${s.title.replace(/'/g, "\\'")}', ${s.id}, '${s.category || ''}')"
+                    class="ikm-service-card cursor-pointer p-2.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition flex items-center justify-between text-xs bg-white shadow-xs">
+                    <div class="flex items-center gap-2 overflow-hidden">
+                      <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center shrink-0">
+                        ${s.id < 10 ? '0' + s.id : s.id}
+                      </span>
+                      <span class="font-semibold text-slate-800 truncate">${s.title}</span>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Standard Dropdown Select (Semua Tanda Pagar Dihapus) -->
+            <div class="pt-2">
+              <label class="block font-bold text-slate-700 text-xs mb-1">Atau Pilih Langsung dari Daftar Lengkap *</label>
+              <select id="ikmService" required onchange="handleIkmServiceDropdown(this.value)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-700 focus:outline-none text-xs bg-white">
+                <option value="">-- Pilih Standar Layanan PTSP --</option>
                 ${(window.KUA_SERVICES || []).map(s => `
                   <option value="${s.title}" ${ikmPrefillData && (ikmPrefillData.prefilledService === s.title || (ikmPrefillData.prefilledService && s.title.includes(ikmPrefillData.prefilledService))) ? 'selected' : ''}>
-                    #${s.id} - ${s.title}
+                    ${s.id < 10 ? '0' + s.id : s.id}. ${s.title}
                   </option>
                 `).join('')}
               </select>
@@ -1564,7 +1634,7 @@ function renderIkmPage(container, options = {}) {
           <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
             <h4 class="font-bold text-slate-900 text-sm">5. Masukan / Saran Perbaikan (Opsional)</h4>
             <textarea id="ikmFeedback" rows="3" placeholder="Tuliskan pengalaman, kritik yang membangun, atau saran untuk kemajuan layanan KUA Biringbulu..."
-              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-rose-800 focus:outline-none text-xs"></textarea>
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-700 focus:outline-none text-xs"></textarea>
           </div>
 
           <!-- Submit Button -->
@@ -1572,8 +1642,8 @@ function renderIkmPage(container, options = {}) {
             <button type="button" onclick="setIkmTab(0)" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition">
               Batal
             </button>
-            <button type="submit" class="px-7 py-3 rounded-xl bg-rose-900 hover:bg-rose-800 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
-              <i data-lucide="check-circle" class="w-4 h-4"></i> Kirim Penilaian IKM Berbintang
+            <button type="submit" class="px-7 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4"></i> Kirim Penilaian IKM
             </button>
           </div>
 
@@ -1633,6 +1703,112 @@ function setIkmRating(key, val) {
       labelEl.className = val >= 4 ? 'text-xs font-bold text-emerald-700' : 'text-xs font-bold text-amber-700';
     }
   }
+}
+
+// Interactivity for IKM Service Selection without '#'
+function selectIkmService(title, id, category) {
+  const select = document.getElementById('ikmService');
+  if (select) {
+    select.value = title;
+  }
+
+  const s = (window.KUA_SERVICES || []).find(item => item.id === id || item.title === title);
+  updateIkmSelectedCard(s || { id: id, title: title, category: category, subtitle: 'Standar Pelayanan PTSP KUA Biringbulu' });
+}
+
+function handleIkmServiceDropdown(title) {
+  const s = (window.KUA_SERVICES || []).find(item => item.title === title);
+  if (s) {
+    updateIkmSelectedCard(s);
+  }
+}
+
+function updateIkmSelectedCard(s) {
+  if (!s) return;
+  const numEl = document.getElementById('ikmSelectedNumber');
+  const catEl = document.getElementById('ikmSelectedCategory');
+  const titleEl = document.getElementById('ikmSelectedTitle');
+  const descEl = document.getElementById('ikmSelectedDesc');
+  const iconBox = document.getElementById('ikmSelectedIconBox');
+  const card = document.getElementById('ikmSelectedCard');
+
+  if (numEl) numEl.innerText = `Layanan ${s.id < 10 ? '0' + s.id : s.id}`;
+  if (catEl) catEl.innerText = (s.category || 'PTSP').replace(/_/g, ' ');
+  if (titleEl) titleEl.innerText = s.title;
+  if (descEl) descEl.innerText = s.subtitle || s.outputDocument || 'Standar Pelayanan Prima Bebas Pungli KUA Biringbulu';
+  if (iconBox) iconBox.className = 'w-11 h-11 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-sm ring-2 ring-emerald-400';
+  if (card) {
+    card.classList.add('ring-2', 'ring-emerald-500/40');
+  }
+  if (window.lucide) window.lucide.createIcons();
+}
+
+let currentIkmCat = 'ALL';
+let currentIkmQuery = '';
+
+function filterIkmServicesByCategory(cat) {
+  currentIkmCat = cat;
+  
+  // Update button active state
+  document.querySelectorAll('.ikm-pill-btn').forEach(btn => {
+    if (btn.getAttribute('data-cat') === cat) {
+      btn.className = 'ikm-pill-btn px-3 py-1 rounded-full font-bold whitespace-nowrap bg-emerald-800 text-white transition';
+    } else {
+      btn.className = 'ikm-pill-btn px-3 py-1 rounded-full font-semibold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition';
+    }
+  });
+
+  renderIkmQuickList();
+}
+
+function handleIkmServiceSearch(query) {
+  currentIkmQuery = query.toLowerCase().trim();
+  renderIkmQuickList();
+}
+
+function renderIkmQuickList() {
+  const container = document.getElementById('ikmQuickServiceList');
+  if (!container) return;
+
+  const allServices = window.KUA_SERVICES || [];
+  let filtered = allServices;
+
+  if (currentIkmCat !== 'ALL') {
+    filtered = filtered.filter(s => s.category === currentIkmCat);
+  }
+
+  if (currentIkmQuery) {
+    filtered = filtered.filter(s => 
+      s.title.toLowerCase().includes(currentIkmQuery) ||
+      (s.subtitle && s.subtitle.toLowerCase().includes(currentIkmQuery)) ||
+      String(s.id).includes(currentIkmQuery)
+    );
+  }
+
+  const displayList = filtered.slice(0, 10);
+  if (displayList.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-full py-4 text-center text-xs text-slate-400">
+        Tidak ada layanan yang sesuai kata kunci "${currentIkmQuery}".
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = displayList.map(s => `
+    <div onclick="selectIkmService('${s.title.replace(/'/g, "\\'")}', ${s.id}, '${s.category || ''}')"
+      class="ikm-service-card cursor-pointer p-2.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition flex items-center justify-between text-xs bg-white shadow-xs">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center shrink-0">
+          ${s.id < 10 ? '0' + s.id : s.id}
+        </span>
+        <span class="font-semibold text-slate-800 truncate">${s.title}</span>
+      </div>
+      <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
+    </div>
+  `).join('');
+
+  if (window.lucide) window.lucide.createIcons();
 }
 
 function handleIkmSubmit(event) {

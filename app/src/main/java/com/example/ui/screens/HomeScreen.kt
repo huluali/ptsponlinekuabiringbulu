@@ -29,6 +29,7 @@ import androidx.compose.material.icons.filled.AccountBalance
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Badge
 import androidx.compose.material.icons.filled.Calculate
+import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.CompassCalibration
 import androidx.compose.material.icons.filled.Diversity1
 import androidx.compose.material.icons.filled.Explore
@@ -314,12 +315,12 @@ fun HomeScreen(
             }
         }
 
-        // 3b. Survei IKM Berbintang Banner
+        // 3b. Survei IKM Banner
         item {
             Card(
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
-                border = BorderStroke(1.dp, Color(0xFFFDE68A)),
+                border = BorderStroke(1.dp, Color(0xFFA7F3D0)),
                 elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -333,7 +334,7 @@ fun HomeScreen(
                         .fillMaxWidth()
                         .background(
                             Brush.horizontalGradient(
-                                listOf(Color(0xFFFFFBEB), Color(0xFFFEF2F2))
+                                listOf(Color(0xFFECFDF5), Color(0xFFF0FDF4))
                             )
                         )
                         .padding(14.dp),
@@ -343,13 +344,13 @@ fun HomeScreen(
                         modifier = Modifier
                             .size(44.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFFF59E0B).copy(alpha = 0.20f)),
+                            .background(KuaGreenPrimary.copy(alpha = 0.15f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
                             imageVector = Icons.Filled.Star,
                             contentDescription = null,
-                            tint = Color(0xFFD97706),
+                            tint = KuaGreenPrimary,
                             modifier = Modifier.size(24.dp)
                         )
                     }
@@ -357,9 +358,9 @@ fun HomeScreen(
                     Column(modifier = Modifier.weight(1f)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(
-                                text = "Survei IKM Berbintang",
+                                text = "Survei IKM",
                                 style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                                color = Color(0xFF8B1515)
+                                color = KuaGreenPrimary
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Box(
@@ -386,7 +387,7 @@ fun HomeScreen(
                     Spacer(modifier = Modifier.width(8.dp))
                     Button(
                         onClick = onNavigateToIkmSurvey,
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B1515)),
+                        colors = ButtonDefaults.buttonColors(containerColor = KuaGreenPrimary),
                         shape = RoundedCornerShape(10.dp),
                         contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
                         modifier = Modifier.height(36.dp)
@@ -733,14 +734,15 @@ fun PopularServiceCard(
     service: KuaServiceItem,
     onClick: () -> Unit
 ) {
+    val formattedId = if (service.id < 10) "0${service.id}" else "${service.id}"
     Card(
-        shape = RoundedCornerShape(14.dp),
+        shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         border = BorderStroke(1.dp, Color(0xFFE2E8F0)),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
+            .clip(RoundedCornerShape(16.dp))
             .clickable(onClick = onClick)
             .testTag("popular_service_${service.id}")
     ) {
@@ -750,15 +752,17 @@ fun PopularServiceCard(
         ) {
             Box(
                 modifier = Modifier
-                    .size(38.dp)
-                    .clip(RoundedCornerShape(10.dp))
-                    .background(Color(0xFFB71C1C).copy(alpha = 0.12f)),
+                    .size(42.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(KuaGreenPrimary.copy(alpha = 0.12f))
+                    .border(1.dp, KuaGreenPrimary.copy(alpha = 0.25f), RoundedCornerShape(12.dp)),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "#${service.id}",
+                    text = formattedId,
                     style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.ExtraBold),
-                    color = Color(0xFFB71C1C)
+                    color = KuaGreenPrimary,
+                    fontSize = 14.sp
                 )
             }
             Spacer(modifier = Modifier.width(12.dp))
@@ -777,29 +781,55 @@ fun PopularServiceCard(
                     overflow = TextOverflow.Ellipsis,
                     fontSize = 11.5.sp
                 )
-                Spacer(modifier = Modifier.height(4.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Spacer(modifier = Modifier.height(6.dp))
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Surface(
                         color = Color(0xFFDCFCE7),
                         shape = RoundedCornerShape(6.dp),
                         border = BorderStroke(1.dp, Color(0xFFBBF7D0))
                     ) {
                         Text(
-                            text = service.cost.split("/").firstOrNull() ?: service.cost,
+                            text = service.cost.split("/").firstOrNull()?.trim() ?: service.cost,
                             color = Color(0xFF15803D),
                             fontSize = 10.sp,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                         )
                     }
+                    Surface(
+                        color = Color(0xFFF1F5F9),
+                        shape = RoundedCornerShape(6.dp),
+                        border = BorderStroke(1.dp, Color(0xFFE2E8F0))
+                    ) {
+                        Text(
+                            text = service.category.shortName,
+                            color = Color(0xFF475569),
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Medium,
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
                 }
             }
-            Icon(
-                imageVector = Icons.Filled.ArrowForward,
-                contentDescription = "Detail",
-                tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.size(18.dp)
-            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Box(
+                modifier = Modifier
+                    .size(32.dp)
+                    .clip(CircleShape)
+                    .background(Color(0xFFF8FAFC))
+                    .border(1.dp, Color(0xFFE2E8F0), CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.ChevronRight,
+                    contentDescription = "Detail",
+                    tint = KuaGreenPrimary,
+                    modifier = Modifier.size(18.dp)
+                )
+            }
         }
     }
 }

@@ -556,14 +556,14 @@ fun TrackingDetailCard(
                     onClick = { onSurveyIkm(application.serviceTitle) },
                     shape = RoundedCornerShape(10.dp),
                     colors = ButtonDefaults.outlinedButtonColors(
-                        contentColor = Color(0xFFD97706)
+                        contentColor = KuaGreenPrimary
                     ),
-                    border = BorderStroke(1.dp, Color(0xFFF59E0B)),
+                    border = BorderStroke(1.dp, KuaGreenPrimary),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Icon(imageVector = Icons.Filled.Star, contentDescription = null, tint = Color(0xFFD97706), modifier = Modifier.size(18.dp))
+                    Icon(imageVector = Icons.Filled.Star, contentDescription = null, tint = KuaGreenPrimary, modifier = Modifier.size(18.dp))
                     Spacer(modifier = Modifier.width(6.dp))
-                    Text("Beri Penilaian Bintang IKM ⭐", fontWeight = FontWeight.Bold, fontSize = 12.5.sp)
+                    Text("Survei IKM", fontWeight = FontWeight.Bold, fontSize = 13.sp)
                 }
             }
         }

@@ -31,11 +31,15 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Analytics
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Feedback
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.RateReview
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
@@ -57,6 +61,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
@@ -84,7 +89,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.BiringbuluData
+import com.example.data.KuaServiceData
 import com.example.data.local.entity.IkmSurveyEntity
+import com.example.model.KuaServiceCategory
+import com.example.ui.theme.KuaGreenPrimary
+import com.example.ui.theme.KuaGreenPrimaryDarker
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -113,30 +122,36 @@ fun IkmSurveyScreen(
     var selectedTab by remember { mutableIntStateOf(if (initialServiceTitle != null) 1 else 0) }
     val context = LocalContext.current
 
-    // Form fields
+    // Form fields & Interactive Service Picker state
     var respondentName by remember { mutableStateOf("") }
     var respondentPhone by remember { mutableStateOf("") }
-    val availableServices = remember {
-        listOf(
-            "Pendaftaran Nikah (SIMKAH)",
-            "Surat Rekomendasi Nikah (N10)",
-            "Bimbingan Catin (Bimwin)",
-            "Duplikat Buku Nikah",
-            "Konseling BP4 & Keluarga",
-            "Akta Ikrar Wakaf (AIW)",
-            "Penerbitan ID SIMAS Masjid",
-            "Sertifikasi Halal (Self-Declare)",
-            "Konsultasi Hisab Rukyat & Kiblat",
-            "Pelayanan Administrasi PTSP Lainnya"
-        )
+    var serviceSearchQuery by remember { mutableStateOf("") }
+    var selectedServiceCategory by remember { mutableStateOf<KuaServiceCategory?>(null) }
+    var isServicePickerExpanded by remember { mutableStateOf(false) }
+
+    val allServicesList = remember { KuaServiceData.allServices }
+    val filteredServicesList = remember(serviceSearchQuery, selectedServiceCategory) {
+        allServicesList.filter { item ->
+            val matchesCategory = selectedServiceCategory == null || item.category == selectedServiceCategory
+            val matchesQuery = serviceSearchQuery.isBlank() ||
+                    item.title.contains(serviceSearchQuery.trim(), ignoreCase = true) ||
+                    item.subtitle.contains(serviceSearchQuery.trim(), ignoreCase = true) ||
+                    item.category.title.contains(serviceSearchQuery.trim(), ignoreCase = true) ||
+                    item.category.shortName.contains(serviceSearchQuery.trim(), ignoreCase = true)
+            matchesCategory && matchesQuery
+        }
     }
+
     var selectedService by remember {
         mutableStateOf(
             if (!initialServiceTitle.isNullOrBlank()) {
-                availableServices.find { initialServiceTitle.contains(it.take(10), ignoreCase = true) }
-                    ?: initialServiceTitle
+                val match = allServicesList.find {
+                    it.title.contains(initialServiceTitle.take(10), ignoreCase = true) ||
+                    initialServiceTitle.contains(it.title.take(10), ignoreCase = true)
+                }
+                match?.let { String.format(Locale.US, "%02d. %s", it.id, it.title) } ?: initialServiceTitle
             } else {
-                availableServices.first()
+                "01. Pendaftaran Kehendak Nikah"
             }
         )
     }
@@ -181,7 +196,7 @@ fun IkmSurveyScreen(
                 title = {
                     Column {
                         Text(
-                            text = "Survei IKM Berbintang",
+                            text = "Survei IKM",
                             style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                             color = Color.White
                         )
@@ -203,7 +218,7 @@ fun IkmSurveyScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF8B1515) // Pangadakkang Red Maroon
+                    containerColor = KuaGreenPrimary
                 )
             )
         },
@@ -219,11 +234,11 @@ fun IkmSurveyScreen(
             TabRow(
                 selectedTabIndex = selectedTab,
                 containerColor = Color.White,
-                contentColor = Color(0xFF8B1515),
+                contentColor = KuaGreenPrimary,
                 indicator = { tabPositions ->
                     TabRowDefaults.SecondaryIndicator(
                         modifier = Modifier.tabIndicatorOffset(tabPositions[selectedTab]),
-                        color = Color(0xFF8B1515),
+                        color = KuaGreenPrimary,
                         height = 3.dp
                     )
                 }
@@ -359,7 +374,7 @@ fun IkmSurveyScreen(
 
                                 Button(
                                     onClick = { selectedTab = 1 },
-                                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B1515)),
+                                    colors = ButtonDefaults.buttonColors(containerColor = KuaGreenPrimary),
                                     shape = RoundedCornerShape(12.dp),
                                     modifier = Modifier
                                         .fillMaxWidth()
@@ -479,11 +494,12 @@ fun IkmSurveyScreen(
                     contentPadding = PaddingValues(16.dp),
                     verticalArrangement = Arrangement.spacedBy(14.dp)
                 ) {
+                    // Apresiasi & Info Card
                     item {
                         Card(
-                            shape = RoundedCornerShape(16.dp),
-                            colors = CardDefaults.cardColors(containerColor = Color(0xFFFEF2F2)),
-                            border = BorderStroke(1.dp, Color(0xFFFECACA)),
+                            shape = RoundedCornerShape(14.dp),
+                            colors = CardDefaults.cardColors(containerColor = Color(0xFFE8F5EE)),
+                            border = BorderStroke(1.dp, Color(0xFFA7F3D0)),
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Row(
@@ -494,13 +510,13 @@ fun IkmSurveyScreen(
                                     modifier = Modifier
                                         .size(36.dp)
                                         .clip(CircleShape)
-                                        .background(Color(0xFF8B1515).copy(alpha = 0.12f)),
+                                        .background(KuaGreenPrimary.copy(alpha = 0.15f)),
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Icon(
                                         imageVector = Icons.Filled.ThumbUp,
                                         contentDescription = null,
-                                        tint = Color(0xFF8B1515),
+                                        tint = KuaGreenPrimary,
                                         modifier = Modifier.size(20.dp)
                                     )
                                 }
@@ -510,12 +526,12 @@ fun IkmSurveyScreen(
                                         text = "Apresiasi & Penilaian Pelayanan",
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 13.5.sp,
-                                        color = Color(0xFF991B1B)
+                                        color = KuaGreenPrimaryDarker
                                     )
                                     Text(
                                         text = "Penilaian Anda membantu KUA Kecamatan Biringbulu menjaga integritas wilayah bebas korupsi dan pelayanan prima.",
                                         fontSize = 11.5.sp,
-                                        color = Color(0xFF7F1D1D)
+                                        color = Color(0xFF065F46)
                                     )
                                 }
                             }
@@ -550,7 +566,7 @@ fun IkmSurveyScreen(
                                     singleLine = true,
                                     shape = RoundedCornerShape(12.dp),
                                     colors = OutlinedTextFieldDefaults.colors(
-                                        focusedBorderColor = Color(0xFF8B1515),
+                                        focusedBorderColor = KuaGreenPrimary,
                                         unfocusedBorderColor = Color(0xFFCBD5E1)
                                     ),
                                     modifier = Modifier
@@ -572,7 +588,7 @@ fun IkmSurveyScreen(
                                     singleLine = true,
                                     shape = RoundedCornerShape(12.dp),
                                     colors = OutlinedTextFieldDefaults.colors(
-                                        focusedBorderColor = Color(0xFF8B1515),
+                                        focusedBorderColor = KuaGreenPrimary,
                                         unfocusedBorderColor = Color(0xFFCBD5E1)
                                     ),
                                     modifier = Modifier
@@ -603,7 +619,7 @@ fun IkmSurveyScreen(
                                                 { Icon(Icons.Filled.LocationOn, contentDescription = null, modifier = Modifier.size(14.dp)) }
                                             } else null,
                                             colors = FilterChipDefaults.filterChipColors(
-                                                selectedContainerColor = Color(0xFF8B1515),
+                                                selectedContainerColor = KuaGreenPrimary,
                                                 selectedLabelColor = Color.White
                                             )
                                         )
@@ -613,7 +629,7 @@ fun IkmSurveyScreen(
                         }
                     }
 
-                    // Layanan yang Dinilai
+                    // 2. Layanan yang Diterima (Menarik & Tanpa Tanda Pagar)
                     item {
                         Card(
                             shape = RoundedCornerShape(16.dp),
@@ -622,29 +638,208 @@ fun IkmSurveyScreen(
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
-                                Text(
-                                    text = "2. Layanan yang Diterima",
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 14.sp,
-                                    color = Color(0xFF1E293B)
-                                )
-                                Spacer(modifier = Modifier.height(8.dp))
-
-                                LazyRow(
-                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                                    modifier = Modifier.fillMaxWidth()
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    items(availableServices) { s ->
-                                        val isSelected = selectedService == s
-                                        FilterChip(
-                                            selected = isSelected,
-                                            onClick = { selectedService = s },
-                                            label = { Text(s, fontSize = 12.sp) },
-                                            colors = FilterChipDefaults.filterChipColors(
-                                                selectedContainerColor = Color(0xFF8B1515),
-                                                selectedLabelColor = Color.White
-                                            )
+                                    Text(
+                                        text = "2. Layanan yang Diterima",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 14.5.sp,
+                                        color = Color(0xFF1E293B)
+                                    )
+                                    TextButton(
+                                        onClick = { isServicePickerExpanded = !isServicePickerExpanded }
+                                    ) {
+                                        Text(
+                                            text = if (isServicePickerExpanded) "Tutup Pilihan" else "Ganti Layanan",
+                                            fontSize = 12.5.sp,
+                                            fontWeight = FontWeight.SemiBold,
+                                            color = KuaGreenPrimary
                                         )
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Icon(
+                                            imageVector = if (isServicePickerExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+                                            contentDescription = null,
+                                            tint = KuaGreenPrimary,
+                                            modifier = Modifier.size(18.dp)
+                                        )
+                                    }
+                                }
+
+                                Spacer(modifier = Modifier.height(6.dp))
+
+                                // Selected Service Highlight Card
+                                Card(
+                                    shape = RoundedCornerShape(12.dp),
+                                    colors = CardDefaults.cardColors(containerColor = Color(0xFFF0FDF4)),
+                                    border = BorderStroke(1.dp, Color(0xFFBBF7D0)),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable { isServicePickerExpanded = !isServicePickerExpanded }
+                                ) {
+                                    Row(
+                                        modifier = Modifier.padding(12.dp),
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Box(
+                                            modifier = Modifier
+                                                .size(38.dp)
+                                                .clip(RoundedCornerShape(8.dp))
+                                                .background(KuaGreenPrimary),
+                                            contentAlignment = Alignment.Center
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Filled.Verified,
+                                                contentDescription = null,
+                                                tint = Color.White,
+                                                modifier = Modifier.size(20.dp)
+                                            )
+                                        }
+                                        Spacer(modifier = Modifier.width(12.dp))
+                                        Column(modifier = Modifier.weight(1f)) {
+                                            Text(
+                                                text = "Layanan Terpilih",
+                                                fontSize = 10.5.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = Color(0xFF047857)
+                                            )
+                                            Text(
+                                                text = selectedService,
+                                                fontSize = 13.5.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = Color(0xFF065F46)
+                                            )
+                                        }
+                                    }
+                                }
+
+                                // Expandable Selector with Search & Category Filters
+                                AnimatedVisibility(visible = isServicePickerExpanded) {
+                                    Column(modifier = Modifier.padding(top = 12.dp)) {
+                                        // Search Input
+                                        OutlinedTextField(
+                                            value = serviceSearchQuery,
+                                            onValueChange = { serviceSearchQuery = it },
+                                            placeholder = { Text("Cari layanan (nikah, wakaf, kiblat)...", fontSize = 12.5.sp) },
+                                            leadingIcon = {
+                                                Icon(Icons.Filled.Search, contentDescription = null, tint = Color(0xFF64748B), modifier = Modifier.size(18.dp))
+                                            },
+                                            trailingIcon = if (serviceSearchQuery.isNotBlank()) {
+                                                {
+                                                    IconButton(onClick = { serviceSearchQuery = "" }) {
+                                                        Icon(Icons.Filled.Clear, contentDescription = "Hapus", modifier = Modifier.size(16.dp))
+                                                    }
+                                                }
+                                            } else null,
+                                            singleLine = true,
+                                            shape = RoundedCornerShape(10.dp),
+                                            colors = OutlinedTextFieldDefaults.colors(
+                                                focusedBorderColor = KuaGreenPrimary,
+                                                unfocusedBorderColor = Color(0xFFCBD5E1)
+                                            ),
+                                            modifier = Modifier.fillMaxWidth()
+                                        )
+
+                                        Spacer(modifier = Modifier.height(8.dp))
+
+                                        // Category Chips
+                                        LazyRow(
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                            modifier = Modifier.fillMaxWidth()
+                                        ) {
+                                            item {
+                                                FilterChip(
+                                                    selected = selectedServiceCategory == null,
+                                                    onClick = { selectedServiceCategory = null },
+                                                    label = { Text("Semua (48)", fontSize = 11.5.sp) },
+                                                    colors = FilterChipDefaults.filterChipColors(
+                                                        selectedContainerColor = KuaGreenPrimary,
+                                                        selectedLabelColor = Color.White
+                                                    )
+                                                )
+                                            }
+                                            items(KuaServiceCategory.values()) { cat ->
+                                                val isCatSelected = selectedServiceCategory == cat
+                                                val count = allServicesList.count { it.category == cat }
+                                                FilterChip(
+                                                    selected = isCatSelected,
+                                                    onClick = { selectedServiceCategory = if (isCatSelected) null else cat },
+                                                    label = { Text("${cat.shortName} ($count)", fontSize = 11.5.sp) },
+                                                    colors = FilterChipDefaults.filterChipColors(
+                                                        selectedContainerColor = KuaGreenPrimary,
+                                                        selectedLabelColor = Color.White
+                                                    )
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(8.dp))
+
+                                        // Services List Items
+                                        Column(
+                                            verticalArrangement = Arrangement.spacedBy(6.dp),
+                                            modifier = Modifier.fillMaxWidth()
+                                        ) {
+                                            filteredServicesList.take(15).forEach { item ->
+                                                val itemFormatted = String.format(Locale.US, "%02d. %s", item.id, item.title)
+                                                val isSelected = selectedService == itemFormatted || selectedService.endsWith(item.title)
+                                                Surface(
+                                                    onClick = {
+                                                        selectedService = itemFormatted
+                                                        isServicePickerExpanded = false
+                                                    },
+                                                    shape = RoundedCornerShape(10.dp),
+                                                    color = if (isSelected) Color(0xFFDCFCE7) else Color(0xFFF8FAFC),
+                                                    border = BorderStroke(1.dp, if (isSelected) KuaGreenPrimary else Color(0xFFE2E8F0)),
+                                                    modifier = Modifier.fillMaxWidth()
+                                                ) {
+                                                    Row(
+                                                        modifier = Modifier.padding(10.dp),
+                                                        verticalAlignment = Alignment.CenterVertically
+                                                    ) {
+                                                        Box(
+                                                            modifier = Modifier
+                                                                .size(24.dp)
+                                                                .clip(CircleShape)
+                                                                .background(if (isSelected) KuaGreenPrimary else Color(0xFFCBD5E1)),
+                                                            contentAlignment = Alignment.Center
+                                                        ) {
+                                                            Text(
+                                                                text = String.format(Locale.US, "%02d", item.id),
+                                                                color = if (isSelected) Color.White else Color(0xFF334155),
+                                                                fontSize = 10.5.sp,
+                                                                fontWeight = FontWeight.Bold
+                                                            )
+                                                        }
+                                                        Spacer(modifier = Modifier.width(10.dp))
+                                                        Column(modifier = Modifier.weight(1f)) {
+                                                            Text(
+                                                                text = item.title,
+                                                                fontSize = 12.5.sp,
+                                                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                                                                color = if (isSelected) Color(0xFF047857) else Color(0xFF1E293B)
+                                                            )
+                                                            Text(
+                                                                text = item.subtitle,
+                                                                fontSize = 10.5.sp,
+                                                                color = Color(0xFF64748B),
+                                                                maxLines = 1
+                                                            )
+                                                        }
+                                                        if (isSelected) {
+                                                            Icon(
+                                                                imageVector = Icons.Filled.CheckCircle,
+                                                                contentDescription = null,
+                                                                tint = KuaGreenPrimary,
+                                                                modifier = Modifier.size(18.dp)
+                                                            )
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -786,7 +981,7 @@ fun IkmSurveyScreen(
                                     maxLines = 6,
                                     shape = RoundedCornerShape(12.dp),
                                     colors = OutlinedTextFieldDefaults.colors(
-                                        focusedBorderColor = Color(0xFF8B1515),
+                                        focusedBorderColor = KuaGreenPrimary,
                                         unfocusedBorderColor = Color(0xFFCBD5E1)
                                     ),
                                     modifier = Modifier
@@ -818,7 +1013,7 @@ fun IkmSurveyScreen(
                                     showSuccessDialog = true
                                 }
                             },
-                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B1515)),
+                            colors = ButtonDefaults.buttonColors(containerColor = KuaGreenPrimary),
                             shape = RoundedCornerShape(14.dp),
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -922,7 +1117,7 @@ fun IkmSurveyScreen(
                         showSuccessDialog = false
                         selectedTab = 0 // Return to stats
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B1515)),
+                    colors = ButtonDefaults.buttonColors(containerColor = KuaGreenPrimary),
                     shape = RoundedCornerShape(10.dp)
                 ) {
                     Text("Lihat Hasil IKM", color = Color.White)
@@ -1142,7 +1337,7 @@ fun ReviewCard(survey: IkmSurveyEntity) {
                         Text(
                             text = survey.serviceName,
                             fontSize = 11.sp,
-                            color = Color(0xFF8B1515),
+                            color = KuaGreenPrimary,
                             fontWeight = FontWeight.SemiBold,
                             maxLines = 1
                         )

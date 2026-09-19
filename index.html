@@ -78,93 +78,152 @@
     </div>
   </div>
 
-  <!-- Main Navbar -->
-  <header class="sticky top-0 z-40 glass-header text-white shadow-lg border-b border-emerald-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
+  <!-- Layout Wrapper with Side Navigation on Desktop Web (Di Samping Seperti Lampiran 2) -->
+  <div class="flex-grow flex flex-col lg:flex-row w-full min-h-screen">
+
+    <!-- SIDEBAR NAVIGATION (Di Samping Pada Tampilan Web Seperti Lampiran 2) -->
+    <aside class="hidden lg:flex flex-col w-72 shrink-0 bg-emerald-950 text-white border-r border-emerald-800/70 sticky top-0 h-screen overflow-y-auto custom-scrollbar z-30 shadow-2xl">
+      <!-- Logo & Title -->
+      <div class="p-5 border-b border-emerald-800/70 flex items-center gap-3.5 cursor-pointer hover:bg-emerald-900/40 transition" onclick="navigateTo('home')">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-400 p-2 shadow-inner flex items-center justify-center border border-emerald-300/30 shrink-0">
+          <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2L4 7v2h16V7l-8-5zm-6 9v7h2v-7H6zm4 0v7h4v-7h-4zm6 0v7h2v-7h-2zM2 20v2h20v-2H2z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base font-extrabold tracking-tight text-white leading-none">KUA BIRINGBULU</h1>
+            <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-full font-bold">DIGITAL</span>
+          </div>
+          <p class="text-[11px] text-emerald-300/90 font-medium mt-1">Kemenag Kab. Gowa • Sulsel</p>
+        </div>
+      </div>
+
+      <!-- Desktop Sidebar Navigation Menu ("seperti lampiran 2 buat disamping") -->
+      <nav class="p-4 flex-grow space-y-1.5">
+        <div class="px-3 pb-1 text-[10px] uppercase font-bold tracking-wider text-emerald-400/80">Menu Navigasi PTSP</div>
         
-        <!-- Logo & Title -->
-        <div class="flex items-center gap-3.5 cursor-pointer" onclick="navigateTo('home')">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-400 p-2 shadow-inner flex items-center justify-center border border-emerald-300/30">
-            <!-- Icon Kemenag / Mosque -->
-            <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M12 2L4 7v2h16V7l-8-5zm-6 9v7h2v-7H6zm4 0v7h4v-7h-4zm6 0v7h2v-7h-2zM2 20v2h20v-2H2z"/>
-            </svg>
+        <button onclick="navigateTo('home')" class="nav-btn w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-3 text-white bg-emerald-800/90 hover:bg-emerald-800" data-page="home">
+          <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-300"></i>
+          <span>Beranda</span>
+        </button>
+
+        <button onclick="navigateTo('services')" class="nav-btn w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-between text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="services">
+          <div class="flex items-center gap-3">
+            <i data-lucide="layers" class="w-4 h-4 text-emerald-300"></i>
+            <span>48 Layanan PTSP</span>
           </div>
-          <div>
+          <span class="text-[10px] font-bold bg-emerald-800/80 text-emerald-300 px-2 py-0.5 rounded-full">48</span>
+        </button>
+
+        <button onclick="navigateTo('track')" class="nav-btn w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-3 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="track">
+          <i data-lucide="search" class="w-4 h-4 text-emerald-300"></i>
+          <span>Lacak Berkas</span>
+        </button>
+
+        <button onclick="navigateTo('syariah')" class="nav-btn w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-3 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="syariah">
+          <i data-lucide="compass" class="w-4 h-4 text-emerald-300"></i>
+          <span>Konsultasi & Kiblat</span>
+        </button>
+
+        <button onclick="navigateTo('ikm')" class="nav-btn w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-between text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="ikm">
+          <div class="flex items-center gap-3">
+            <i data-lucide="star" class="w-4 h-4 text-amber-300"></i>
+            <span>Survei IKM</span>
+          </div>
+          <span class="text-[10px] font-bold bg-emerald-800/80 text-amber-300 px-1.5 py-0.5 rounded">A</span>
+        </button>
+
+        <button onclick="navigateTo('profile')" class="nav-btn w-full px-3.5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-3 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="profile">
+          <i data-lucide="building-2" class="w-4 h-4 text-emerald-300"></i>
+          <span>Profil KUA</span>
+        </button>
+
+        <div class="pt-3">
+          <button onclick="navigateTo('admin')" class="w-full px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 hover:from-amber-300 hover:to-amber-400 transition flex items-center justify-between shadow-md">
             <div class="flex items-center gap-2">
-              <h1 class="text-xl font-bold tracking-tight text-white leading-none">KUA BIRINGBULU</h1>
-              <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold">DIGITAL</span>
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span>Loket Petugas</span>
             </div>
-            <p class="text-xs text-emerald-200 mt-1 font-medium">Kementerian Agama Kabupaten Gowa • Prov. Sulawesi Selatan</p>
+            <span class="bg-emerald-950/15 px-1.5 py-0.5 rounded text-[10px] font-black uppercase">LOGIN</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Sidebar Bottom Info -->
+      <div class="p-4 border-t border-emerald-800/70 bg-emerald-950/80 text-xs space-y-2.5">
+        <div class="bg-emerald-900/60 p-2.5 rounded-xl border border-emerald-800/50">
+          <span class="text-[10px] uppercase font-bold text-amber-300 block mb-0.5">Zona Integritas WBK</span>
+          <p class="text-[11px] text-emerald-200/90 leading-tight">Nikah Balai Rp 0,- & Bebas Pungli</p>
+        </div>
+        <a href="https://wa.me/6281241193634" target="_blank" class="w-full py-2 px-3 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-emerald-200 hover:text-white text-[11px] font-semibold transition flex items-center justify-center gap-2 border border-emerald-700/60">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> WhatsApp PTSP
+        </a>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT WRAPPER -->
+    <div class="flex-1 flex flex-col min-w-0">
+
+      <!-- Mobile Header (Hidden on Desktop Web Where Sidebar Is on the Side) -->
+      <header class="lg:hidden sticky top-0 z-40 glass-header text-white shadow-lg border-b border-emerald-800">
+        <div class="px-4 py-3 flex justify-between items-center">
+          
+          <!-- Logo & Title Mobile -->
+          <div class="flex items-center gap-2.5 cursor-pointer" onclick="navigateTo('home')">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-emerald-400 p-2 shadow-inner flex items-center justify-center border border-emerald-300/30">
+              <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
+                <path d="M12 2L4 7v2h16V7l-8-5zm-6 9v7h2v-7H6zm4 0v7h4v-7h-4zm6 0v7h2v-7h-2zM2 20v2h20v-2H2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h1 class="text-sm font-bold tracking-tight text-white leading-none">KUA BIRINGBULU</h1>
+                <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[9px] uppercase px-1.5 py-0.5 rounded font-bold">PTSP</span>
+              </div>
+              <p class="text-[10px] text-emerald-200 mt-0.5">Kemenag Kab. Gowa</p>
+            </div>
           </div>
+
+          <!-- Mobile Actions -->
+          <div class="flex items-center gap-2">
+            <button onclick="navigateTo('admin')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-400 text-emerald-950">
+              Loket
+            </button>
+            <button id="mobileMenuBtn" class="p-2 rounded-lg bg-emerald-800 text-white focus:outline-none">
+              <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+          </div>
+
         </div>
 
-        <!-- Desktop Navigation Menu -->
-        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-          <button onclick="navigateTo('home')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-white hover:bg-emerald-800/80" data-page="home">
-            <i data-lucide="layout-grid" class="w-4 h-4"></i> Beranda
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden bg-emerald-900 border-t border-emerald-800 px-4 pt-2 pb-4 space-y-1">
+          <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-white hover:bg-emerald-800 flex items-center gap-2.5">
+            <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-300"></i> Beranda
           </button>
-          <button onclick="navigateTo('services')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="services">
-            <i data-lucide="layers" class="w-4 h-4"></i> 48 Layanan PTSP
+          <button onclick="navigateTo('services'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+            <i data-lucide="layers" class="w-4 h-4 text-emerald-300"></i> 48 Layanan PTSP
           </button>
-          <button onclick="navigateTo('track')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="track">
-            <i data-lucide="search" class="w-4 h-4"></i> Lacak Berkas
+          <button onclick="navigateTo('track'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+            <i data-lucide="search" class="w-4 h-4 text-emerald-300"></i> Lacak Berkas Permohonan
           </button>
-          <button onclick="navigateTo('syariah')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="syariah">
-            <i data-lucide="compass" class="w-4 h-4"></i> Konsultasi & Kiblat
+          <button onclick="navigateTo('syariah'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+            <i data-lucide="compass" class="w-4 h-4 text-emerald-300"></i> Konsultasi Syariah & Kiblat
           </button>
-          <button onclick="navigateTo('ikm')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="ikm">
+          <button onclick="navigateTo('ikm'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
             <i data-lucide="star" class="w-4 h-4 text-amber-300"></i> Survei IKM
           </button>
-          <button onclick="navigateTo('profile')" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-emerald-200 hover:text-white hover:bg-emerald-800/80" data-page="profile">
-            <i data-lucide="building-2" class="w-4 h-4"></i> Profil KUA
-          </button>
-          <button onclick="navigateTo('admin')" class="ml-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-400 text-emerald-950 hover:bg-amber-300 transition flex items-center gap-1.5 shadow-md hover:shadow-lg">
-            <i data-lucide="shield-check" class="w-4 h-4"></i> Loket Petugas
-          </button>
-        </nav>
-
-        <!-- Mobile Menu Toggle -->
-        <div class="md:hidden flex items-center gap-2">
-          <button onclick="navigateTo('admin')" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-400 text-emerald-950">
-            Loket
-          </button>
-          <button id="mobileMenuBtn" class="p-2 rounded-lg bg-emerald-800 text-white focus:outline-none">
-            <i data-lucide="menu" class="w-6 h-6"></i>
+          <button onclick="navigateTo('profile'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
+            <i data-lucide="building-2" class="w-4 h-4 text-emerald-300"></i> Profil KUA & Desa
           </button>
         </div>
+      </header>
 
-      </div>
-    </div>
-
-    <!-- Mobile Dropdown Navigation -->
-    <div id="mobileMenu" class="md:hidden hidden bg-emerald-900 border-t border-emerald-800 px-4 pt-2 pb-4 space-y-1">
-      <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-white hover:bg-emerald-800 flex items-center gap-2.5">
-        <i data-lucide="layout-grid" class="w-4 h-4"></i> Beranda
-      </button>
-      <button onclick="navigateTo('services'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
-        <i data-lucide="layers" class="w-4 h-4"></i> 48 Layanan PTSP
-      </button>
-      <button onclick="navigateTo('track'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
-        <i data-lucide="search" class="w-4 h-4"></i> Lacak Berkas Permohonan
-      </button>
-      <button onclick="navigateTo('syariah'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
-        <i data-lucide="compass" class="w-4 h-4"></i> Konsultasi Syariah & Kiblat
-      </button>
-      <button onclick="navigateTo('ikm'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
-        <i data-lucide="star" class="w-4 h-4 text-amber-300"></i> Survei IKM
-      </button>
-      <button onclick="navigateTo('profile'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-100 hover:bg-emerald-800 flex items-center gap-2.5">
-        <i data-lucide="building-2" class="w-4 h-4"></i> Profil KUA & Desa
-      </button>
-    </div>
-  </header>
-
-  <!-- Main Dynamic Content Container -->
-  <main id="appContent" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <!-- Konten halaman dinamis dimuat via main.js -->
-  </main>
+      <!-- Main Dynamic Content Container -->
+      <main id="appContent" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Konten halaman dinamis dimuat via main.js -->
+      </main>
 
   <!-- Modal Detail & Form Pengajuan -->
   <div id="serviceModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
@@ -225,8 +284,8 @@
             <strong class="text-amber-400 block mb-1">Pemberitahuan:</strong>
             Laporkan segala indikasi pungutan liar ke Satgas Pengawasan Internal Kemenag.
           </div>
-          <button onclick="navigateTo('ikm')" class="mt-3 w-full py-2 px-3 rounded-xl bg-rose-900/60 hover:bg-rose-900 text-amber-200 border border-rose-700/60 text-xs font-bold transition flex items-center justify-center gap-2">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-300 text-amber-300"></i> Survei IKM Berbintang
+          <button onclick="navigateTo('ikm')" class="mt-3 w-full py-2 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-amber-300 border border-emerald-600 text-xs font-bold transition flex items-center justify-center gap-2 shadow">
+            <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-300 text-amber-300"></i> Survei IKM
           </button>
         </div>
       </div>
@@ -240,6 +299,9 @@
       </div>
     </div>
   </footer>
+
+    </div><!-- End of Right Content Wrapper -->
+  </div><!-- End of Side Navigation Layout Wrapper -->
 
   <!-- Load Data and Main Script -->
   <script src="app_data.js"></script>

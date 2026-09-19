@@ -447,12 +447,12 @@ fun ServiceDetailScreen(
                 }
             }
 
-            // Survei IKM Berbintang untuk Layanan Ini
+            // Survei IKM untuk Layanan Ini
             item {
                 Card(
                     shape = RoundedCornerShape(16.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFBEB)),
-                    border = BorderStroke(1.dp, Color(0xFFFDE68A)),
+                    colors = CardDefaults.cardColors(containerColor = Color(0xFFE8F5EE)),
+                    border = BorderStroke(1.dp, Color(0xFFA7F3D0)),
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Row(
@@ -465,39 +465,39 @@ fun ServiceDetailScreen(
                             modifier = Modifier
                                 .size(40.dp)
                                 .clip(CircleShape)
-                                .background(Color(0xFFF59E0B).copy(alpha = 0.20f)),
+                                .background(KuaGreenPrimary.copy(alpha = 0.15f)),
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
                                 imageVector = Icons.Filled.Star,
                                 contentDescription = null,
-                                tint = Color(0xFFD97706),
+                                tint = KuaGreenPrimary,
                                 modifier = Modifier.size(22.dp)
                             )
                         }
                         Spacer(modifier = Modifier.width(12.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Survei Kepuasan (IKM)",
+                                text = "Survei IKM",
                                 style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                                color = Color(0xFF92400E)
+                                color = KuaGreenPrimary
                             )
                             Text(
-                                text = "Beri bintang & ulasan untuk layanan ini",
+                                text = "Beri penilaian & ulasan untuk layanan ini",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = Color(0xFFB45309),
+                                color = Color(0xFF065F46),
                                 fontSize = 11.5.sp
                             )
                         }
                         Spacer(modifier = Modifier.width(8.dp))
                         Button(
                             onClick = { onGiveFeedbackIkm?.invoke(service.title) },
-                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD97706)),
+                            colors = ButtonDefaults.buttonColors(containerColor = KuaGreenPrimary),
                             shape = RoundedCornerShape(8.dp),
                             contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
                             modifier = Modifier.height(36.dp)
                         ) {
-                            Text("Nilai ⭐", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                            Text("Nilai", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
                         }
                     }
                 }

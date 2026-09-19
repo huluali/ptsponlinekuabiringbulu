@@ -357,10 +357,10 @@ fun FullMenuGridScreen(
                     ),
                     AppMenuItem(
                         id = "ikm_survey",
-                        title = "Survei IKM\nBerbintang",
+                        title = "Survei IKM",
                         icon = Icons.Filled.Star,
-                        iconColor = Color(0xFFD97706),
-                        iconBgColor = Color(0xFFFEF3C7),
+                        iconColor = Color(0xFF006C48),
+                        iconBgColor = Color(0xFFE8F5EE),
                         action = onNavigateToIkmSurvey
                     )
                 )
